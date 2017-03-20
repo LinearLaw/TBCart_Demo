@@ -1,0 +1,23 @@
+<div class="table_body clearfix" ng-repeat="item in list">
+    <div class="shop_name">
+        <input type="checkbox"/>
+        <span>店铺：</span>
+        <a>{{item.shopName}}</a>
+    </div>
+    <div class="goods_content">
+        <div class="goods_sel"><input type="checkbox"/></div>
+        <div class="goods_pic"><img src="{{item.imgSrc}}" alt=""/></div>
+        <div class="goods_title"><a href="#">{{item.goTitle}}</a></div>
+        <div class="goods_type">{{item.goType}}</div>
+        <div class="goods_price">
+            <span>￥{{item.price}}</span>
+        </div>
+        <div class="goods_count">
+            <button class="minus" ng-click="item.minus()">-</button>
+            <input type="text" ng-model="item.count"/>
+            <button class="plus" ng-click="item.plus()">+</button>
+        </div>
+        <div class="goods_total">{{item.count*item.price}}</div>
+        <div class="goods_oper"></div>
+    </div>
+</div>

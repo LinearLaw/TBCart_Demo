@@ -1,43 +1,44 @@
 //1、顶部导航栏
-#nav{
-  >#TB_nav{
-    width:100%;
-    height:35px;
+#nav {
+  > #TB_nav {
+    width: 100%;
+    height: 35px;
     background-color: #f0f0f0;
-    border-bottom:#999;
+    border-bottom: #999;
   }
 }
+
 //2、LOGO部分
-#logo{
-  >.container{
-    height:98px;
-    padding:20px 0;
+#logo {
+  > .container {
+    height: 98px;
+    padding: 20px 0;
   }
 }
 
 //3、tab栏
-#tab{
-  >.container{
-    >.tab_left{
-      padding:15px 0;
-      height:100%;
-      >ul{
-        >li{
-          font:15px "microsoft yahei";
-          &+li{
-            margin-left:20px;
+#tab {
+  > .container {
+    > .tab_left {
+      padding: 15px 0;
+      height: 100%;
+      > ul {
+        > li {
+          font: 15px "microsoft yahei";
+          & + li {
+            margin-left: 20px;
           }
         }
       }
     }
-    >.tab_right{
-      >button{
+    > .tab_right {
+      > button {
         width: 56px;
         height: 26px;
-        border-radius:4px;
+        border-radius: 4px;
         background-color: #AAA;
-        color:#fff;
-        &:hover{
+        color: #fff;
+        &:hover {
           background-color: #ff4400;
         }
       }
@@ -46,130 +47,133 @@
 }
 
 //4、详情页
-#goods_content{
-  >.container{
-    >.table_head{
-      >div{
+#goods_content {
+  > .container {
+    > .table_head {
+      > div {
         float: left;
       }
-      >div:first-child{
-        width:150px;
+      > div:first-child {
+        width: 150px;
       }
-      >div:nth-child(2){
-        width:390px;
+      > div:nth-child(2) {
+        width: 390px;
       }
-      >div:nth-child(3){
+      > div:nth-child(3) {
         width: 135px;
       }
-      >div:nth-child(4){
-        width:135px;
+      > div:nth-child(4) {
+        width: 135px;
       }
-      >div:nth-child(5){
-        width:100px;
+      > div:nth-child(5) {
+        width: 100px;
       }
-      >div:nth-child(6){
-        width:65px;
+      > div:nth-child(6) {
+        width: 65px;
       }
     }
-    >.table_body{
-      >.shop_name{
-        width: 100%;
-        height:35px;
-      }
-      >.goods_content{
-        width:100%;
-        height:120px;
-        padding:15px 20px;
-        border:1px solid #999;
-        background-color: #fcfcfc;
-        >div{
-          height:100%;
-          float: left;
-          border:1px solid #e0e0e0;
-          &.goods_sel{
-            width:25px;
-          }
-          &.goods_pic{
-            width:90px;
-          }
-          &.goods_title{
-            width:220px;
-          }
-          &.goods_type{
-            width:170px;
-          }
-          &.goods_price{
-            width:135px;
-            font:bold 16px/40px "Microsoft YaHei";
-          }
-          &.goods_count{
-            width:135px;
-            padding-top:10px;
-            button{
-              width: 30px;
-              height: 30px;
-              background-color: #F0F0F0;
-              margin-left:2px;
-              cursor: pointer;
-              &:hover{
-                border:1px solid #ff4400;
+    > div {
+      >.table_body {
+        > .shop_name {
+          width: 100%;
+          height: 35px;
+        }
+        > .goods_content {
+          width: 100%;
+          height: 120px;
+          padding: 15px 20px;
+          border: 1px solid #999;
+          background-color: #fcfcfc;
+          > div {
+            height: 100%;
+            float: left;
+            border: 1px solid #e0e0e0;
+            &.goods_sel {
+              width: 25px;
+            }
+            &.goods_pic {
+              width: 90px;
+            }
+            &.goods_title {
+              width: 220px;
+            }
+            &.goods_type {
+              width: 170px;
+            }
+            &.goods_price {
+              width: 135px;
+              font: bold 16px/40px "Microsoft YaHei";
+            }
+            &.goods_count {
+              width: 135px;
+              padding-top: 10px;
+              button {
+                width: 30px;
+                height: 30px;
+                background-color: #F0F0F0;
+                margin-left: 2px;
+                cursor: pointer;
+                &:hover {
+                  border: 1px solid #ff4400;
+                }
+              }
+              > input {
+                width: 52px;
+                height: 32px;
+                text-align: center;
               }
             }
-            >input{
-              width:52px;
-              height:32px;
-              text-align: center;
+            &.goods_total {
+              width: 100px;
+              font: bold 18px/40px "Microsoft YaHei";
+              color: rgb(255, 68, 0);
             }
-          }
-          &.goods_total{
-            width:100px;
-            font:bold 18px/40px "Microsoft YaHei";
-            color:rgb(255, 68, 0);
-          }
-          &.goods_oper{
-            width:65px;
+            &.goods_oper {
+              width: 65px;
+            }
           }
         }
       }
     }
   }
 }
+
 //5、结算
-#foot{
-  >.container{
+#foot {
+  > .container {
     position: fixed;
-    bottom:0;
-    left:50%;
-    margin-left:-495px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -495px;
     background-color: #E5E5E5;
-    >.con_left{
-      width:88%;
-      padding:15px 5px;
-      >.foot_left{
-        >input,div{
+    > .con_left {
+      width: 88%;
+      padding: 15px 5px;
+      > .foot_left {
+        > input, div {
           float: left;
-          margin-right:10px;
+          margin-right: 10px;
         }
       }
-      >.footer_right{
-        >div{
+      > .footer_right {
+        > div {
           float: left;
-          margin-left:20px;
+          margin-left: 20px;
         }
       }
     }
-    >button{
+    > button {
       width: 12%;
-      height:60px;
-      border:0;
+      height: 60px;
+      border: 0;
       outline: 0;
-      color:#fff;
-      font-size:20px;
+      color: #fff;
+      font-size: 20px;
       float: right;
       background-color: #aaa;
-      &:hover{
-        background-color:#ff4400;
+      &:hover {
+        background-color: #ff4400;
       }
-     }
+    }
   }
 }
