@@ -43,8 +43,8 @@
                 <ul>
                     <!--这里通过配置路由来实现-->
                     <li class="fl"><a ui-sref="agoods">全部商品</a></li>
-                    <li class="fl"><a ui-sref>降价商品</a></li>
-                    <li class="fl"><a ui-sref>库存紧张</a></li>
+                    <li class="fl"><a>降价商品</a></li>
+                    <li class="fl"><a>库存紧张</a></li>
                 </ul>
             </div>
             <div class="tab_right fr">
@@ -55,48 +55,9 @@
         </div>
     </section>
 
-    <!--4、详情页-->
-    <section id="goods_content">
-        <div class="container">
-            <div class="table_head clearfix">
-                <div>
-                    <input type="checkbox"/>
-                    <span>全选</span>
-                </div>
-                <div>商品信息</div>
-                <div>单价</div>
-                <div>数量</div>
-                <div>金额</div>
-                <div>操作</div>
-            </div>
-            <div ui-view>
+    <div ui-view>
 
-            </div>
-        </div>
-    </section>
-
-    <!--5、结算-->
-    <footer id="foot">
-        <div class="container clearfix">
-            <div class="con_left fl">
-                <div class="foot_left fl">
-                    <input type="checkbox"/>
-
-                    <div><a>全选</a></div>
-                    <div><a>删除</a></div>
-                    <div><a>清除失效宝贝</a></div>
-                    <div><a>移入收藏夹</a></div>
-                    <div><a>分享</a></div>
-                </div>
-                <div class="footer_right fr">
-                    <div><span>已选商品{{}}件</span></div>
-                    <div><span>合计（不含运费）:</span></div>
-                    <div><span>{{}}</span></div>
-                </div>
-            </div>
-            <button class="con_right fr">结 算</button>
-        </div>
-    </footer>
+    </div>
 </div>
 <script src="../plugins/angular/angular.js"></script>
 <script src="../plugins/angular-ui-router/release/angular-ui-router.js"></script>
