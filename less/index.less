@@ -30,6 +30,18 @@
         }
       }
     }
+    >.tab_right{
+      >button{
+        width: 56px;
+        height: 26px;
+        border-radius:4px;
+        background-color: #AAA;
+        color:#fff;
+        &:hover{
+          background-color: #ff4400;
+        }
+      }
+    }
   }
 }
 
@@ -96,8 +108,12 @@
             button{
               width: 30px;
               height: 30px;
-              //display: inline-block;
-              background-color: #777;
+              background-color: #F0F0F0;
+              margin-left:2px;
+              cursor: pointer;
+              &:hover{
+                border:1px solid #ff4400;
+              }
             }
             >input{
               width:52px;
@@ -150,7 +166,10 @@
       color:#fff;
       font-size:20px;
       float: right;
-      background-color: #b0b0b0;
+      background-color: #aaa;
+      &:hover{
+        background-color:#ff4400;
+      }
      }
   }
 }
