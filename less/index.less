@@ -88,18 +88,37 @@
             }
           }
           &.goods_total{
-            width:135px;
+            width:100px;
             font:bold 18px/40px "Microsoft YaHei";
             color:rgb(255, 68, 0);
           }
           &.goods_oper{
-            width:66px;
+            width:65px;
           }
         }
-
       }
     }
   }
 }
 
 //5、结算
+#foot{
+  >.container{
+    position: fixed;
+    bottom:0;
+    left:50%;
+    margin-left:-495px;
+    >.foot_left{
+      >input,div{
+        float: left;
+        margin-right:10px;
+      }
+    }
+    >.footer_right{
+      >div,button{
+        float: left;
+        margin-left:20px;
+      }
+    }
+  }
+}
