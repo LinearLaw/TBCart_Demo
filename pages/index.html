@@ -19,7 +19,7 @@
     </header>
 
     <!--2、logo-->
-    <section>
+    <section id="logo">
         <div class="container">
             <div class="head_left_logo fl">
                 <img src="" alt="" class="logo"/>
@@ -36,21 +36,58 @@
     </section>
 
     <!--3、tab栏-->
-    <section>
-        <div class="container">
-            <div class="tab_left">
+    <section id="tab">
+        <div class="container clearfix">
+            <div class="tab_left fl">
                 <ul>
-                    <li>全部商品</li>
-                    <li>降价商品</li>
-                    <li>库存紧张</li>
+                    <li class="fl"><a>全部商品</a></li>
+                    <li class="fl"><a>降价商品</a></li>
+                    <li class="fl"><a>库存紧张</a></li>
                 </ul>
             </div>
-            <div class="tab_right"></div>
+            <div class="tab_right fr">
+                <span>已选商品（不含运费）</span>
+                <span>0.00</span>
+                <button>结算</button>
+            </div>
         </div>
     </section>
 
     <!--4、详情页-->
-    <section></section>
+    <section id="goods_content">
+        <div class="container">
+            <div class="table_head clearfix">
+                <div>
+                    <input type="checkbox"/>
+                    <span>全选</span>
+                </div>
+                <div>商品信息</div>
+                <div>单价</div>
+                <div>数量</div>
+                <div>金额</div>
+                <div>操作</div>
+            </div>
+            <div class="table_body clearfix">
+                <div class="shop_name"></div>
+                <div class="goods_content">
+                    <div class="goods_sel"><input type="checkbox"/></div>
+                    <div class="goods_pic"><img src="" alt=""/></div>
+                    <div class="goods_title"><a href=""></a></div>
+                    <div class="goods_type"></div>
+                    <div class="goods_price">
+                        <span>￥{{}}</span>
+                    </div>
+                    <div class="goods_count">
+                        <button class="minus">-</button>
+                        <input type="text" value="1"/>
+                        <button class="plus">+</button>
+                    </div>
+                    <div class="goods_total">{{}}</div>
+                    <div class="goods_oper"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!--5、结算-->
     <footer></footer>
