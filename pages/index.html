@@ -28,10 +28,12 @@
             </div>
             <div class="head_right_search fr">
                 <select name="sear_items" id="sear_items">
-                    <option value="宝贝" checked></option>
+                    <option selected>宝 贝</option>
+                    <option>天 猫</option>
+                    <option>店 铺</option>
                 </select>
                 <input type="text" name="search"/>
-                <button>搜索</button>
+                <button>搜 索</button>
             </div>
         </div>
     </section>
@@ -44,5 +46,9 @@
 <script src="../plugins/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="../js/index.js"></script>
 <script src="../js/all_goods.js"></script>
+<script>
+    location.href="#!/agoods";
+    console.clear();
+</script>
 </body>
 </html>
