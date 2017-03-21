@@ -47,19 +47,44 @@
 //3、tab栏
 #tab {
   > .container {
+    border-bottom: 2px solid #f0f0f0;
     > .tab_left {
-      padding: 15px 0;
+      padding-top: 5px;
       height: 100%;
       > ul {
         > li {
-          font: 15px "microsoft yahei";
+          height:30px;
+          padding-left: 10px;
+          font:bold 16px "microsoft yahei";
+          cursor: pointer;
+          &.active{
+            border-bottom:2px solid #ff4400;
+          }
+          >a{
+            padding-left: 10px;
+            padding-right:10px;
+            border-left:1px solid #f0f0f0;
+          }
           & + li {
-            margin-left: 20px;
+          }
+          >.active{
+            color:#ff4400;
+          }
+        }
+        >li:first-child{
+          a{
+            border:0;
           }
         }
       }
     }
     > .tab_right {
+      font-size:14px;
+      font-family: "宋体";
+      >.allCount{
+        color:#ff4400;
+        font-weight:bold;
+      }
       > button {
         width: 56px;
         height: 26px;

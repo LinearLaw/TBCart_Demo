@@ -4,8 +4,8 @@
         <div class="tab_left fl">
             <ul>
                 <!--这里通过配置路由来实现三者的切换-->
-                <li class="fl">
-                    <a ui-sref="agoods">全部商品{{totalCount}}</a>
+                <li class="fl active">
+                    <a ui-sref="agoods" class="active">全部商品 {{totalCount}}</a>
                 </li>
                 <li class="fl"><a>降价商品</a></li>
                 <li class="fl"><a>库存紧张</a></li>
@@ -13,7 +13,7 @@
         </div>
         <div class="tab_right fr">
             <span>已选商品（不含运费）</span>
-            <span>{{count}}</span>
+            <span class="allCount">{{count}}</span>
             <button>结算</button>
         </div>
     </div>
