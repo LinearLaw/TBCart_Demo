@@ -20,7 +20,7 @@
                 <a>{{item.shopName}}</a>
             </div>
             <div class="goods_content">
-                <div class="goods_sel"><input type="checkbox" ng-model="item.checkitem"/></div>
+                <div class="goods_sel"><input type="checkbox" ng-click="render()" ng-model="item.checkitem"/></div>
                 <div class="goods_pic"><img src="{{item.imgSrc}}" alt=""/></div>
                 <div class="goods_title"><a href="#">{{item.goTitle}}</a></div>
                 <div class="goods_type">{{item.goType}}</div>
@@ -53,7 +53,7 @@
                 <div><a>分享</a></div>
             </div>
             <div class="footer_right fr">
-                <div><span>已选商品{{}}件</span></div>
+                <div><span>已选商品{{count}}件</span></div>
                 <div><span>合计（不含运费）:</span></div>
                 <div><span>{{totalPrice}}</span></div>
             </div>
