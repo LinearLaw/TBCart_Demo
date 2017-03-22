@@ -59,7 +59,7 @@
                         <input type="text" ng-model="shopItem.count"/>
                         <button class="plus" ng-click="shopItem.plus()">+</button>
                     </div>
-                    <div class="goods_total">{{shopItem.count*shopItem.price}}</div>
+                    <div class="goods_total">￥{{shopItem.count*shopItem.price}}</div>
                     <div class="goods_oper"></div>
                 </div>
                 </div>
@@ -75,7 +75,7 @@
         <div class="con_left fl">
             <div class="foot_left fl">
                 <input type="checkbox" ng-change="allSel2()" ng-model="F_Sel"/>
-                <div><a>全选</a></div>
+                <label ><a>全选</a></label>
                 <div><a>删除</a></div>
                 <div><a>清除失效宝贝</a></div>
                 <div><a>移入收藏夹</a></div>

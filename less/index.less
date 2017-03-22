@@ -14,7 +14,24 @@
     height: 98px;
     padding: 20px 0;
     >.head_left_logo{
-
+      >.tb_title{
+        position: absolute;
+        opacity:0;
+      }
+      >.logo{
+        width: 105px;
+        height: 45px;
+        background-size:300px 225px;
+        background-image: url("../images/logo.png");
+        background-position:  -150px -150px;
+        vertical-align: middle;
+      }
+      >h1{
+        margin-left: 12px;
+        font-size:22px;
+        color:#707070;
+        line-height: 45px;
+      }
     }
     >.head_right_search{
       width: 510px;
@@ -52,13 +69,13 @@
       height: 100%;
       > ul {
         > li {
-          height:30px;
-          padding-left: 10px;
+          height:35px;
           font:bold 16px "microsoft yahei";
           cursor: pointer;
+          padding-bottom:10px;
           >a{
             padding-left: 20px;
-            padding-right:10px;
+            padding-right:30px;
             border-left:1px solid #f0f0f0;
           }
           & + li {
@@ -142,6 +159,9 @@
           width: 100%;
           height: 35px;
           padding-left:10px;
+          >a,span{
+            font:12px "宋体";
+          }
         }
         >.goods_box{
           border: 1px solid rgb(232, 232, 232);
@@ -238,11 +258,24 @@
           float: left;
           margin-right: 10px;
         }
+        >div{
+          margin-right:30px;
+          >a{
+            font:12px "宋体";
+            cursor: pointer;
+            &:hover{
+              color:#ff4400;
+              border-bottom: 1px solid #ff4400;
+            }
+          }
+        }
       }
       > .footer_right {
         > div {
           float: left;
           margin-left: 20px;
+          padding-top:8px;
+          font:12px "宋体";
         }
       }
     }
