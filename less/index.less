@@ -1,3 +1,6 @@
+*{
+  font-family: tahoma,arial,"Hiragino Sans GB",sans-serif;
+}
 //1、顶部导航栏
 #nav {
   > #TB_nav {
@@ -5,6 +8,33 @@
     height: 35px;
     background-color: rgb(245, 245, 245);
     border-bottom: rgb(238, 238, 238);
+    >.container{
+      >ul{
+        >li{
+          float: left;
+          >a{
+            cursor: pointer;
+            font:12px/35px tahoma,arial,"Hiragino Sans GB","宋体",sans-serif;
+            &:hover{
+              color:#ff4400;
+            }
+          }
+        }
+        >.otherColor{
+          color:rgb(108, 108, 108);
+        }
+      }
+      >.left_Nav{
+        >li{
+          margin-right:20px;
+        }
+      }
+      >.right_nav{
+        >li{
+          margin-left:20px;
+        }
+      }
+    }
   }
 }
 
@@ -29,7 +59,7 @@
       >h1{
         margin-left: 12px;
         font-size:22px;
-        color:#707070;
+        color:rgb(60, 60, 60);
         line-height: 45px;
       }
     }
@@ -77,6 +107,7 @@
             padding-left: 20px;
             padding-right:30px;
             border-left:1px solid #f0f0f0;
+            color:rgb(60, 60, 60);
           }
           & + li {
           }
