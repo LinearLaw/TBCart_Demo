@@ -91,14 +91,29 @@ angular.module("AGoods", [])
         }
         //8、所有商品数量
         var sumCount = 0;
-
             angular.forEach($scope.list, function (value,key) {
                 console.log(value.shopGoods.length);
                 sumCount += value.shopGoods.length;
             })
 
         $scope.totalCount=sumCount;
-        //8、店铺数据
+        
+        //9、点击删除，将当前商品删除
+        $scope.delThis= function (item,shopItem) {
+            //console.log(1);
+            var index_1=$scope.list.indexOf(item);
+            var index_2=$scope.list[index_1].shopGoods.indexOf(shopItem);
+            if(confirm("是否删除该商品？")){
+                if(item.shopGoods.length==1){
+                    $scope.list.splice(index_1,1);
+                }else{
+                    $scope.list[index_1].shopGoods.splice(index_2,1);
+                }
+            }else{
+                return;
+            }
+        }
+        //10、店铺数据
         $scope.list = [{
             shopName: "新生格度",
             shopGoodsSel: thisShop,

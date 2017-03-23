@@ -204,39 +204,51 @@
               }
               &.goods_price {
                 width: 135px;
-                font: bold 16px/40px "Microsoft YaHei";
+                font: bold 14px/40px "宋体";
+                color:rgb(60, 60, 60);
+                >span{
+                  font-family: Verdana,Tahoma,arial;
+                }
               }
               &.goods_count {
                 width: 135px;
                 padding-top: 10px;
                 button {
-                  width: 30px;
-                  height: 30px;
+                  width: 20px;
+                  height: 25px;
                   background-color: #F0F0F0;
-                  margin-left: 2px;
                   cursor: pointer;
                   &:hover {
                     border: 1px solid #ff4400;
                   }
                 }
                 > input {
-                  width: 52px;
-                  height: 32px;
+                  width: 42px;
+                  height: 27px;
                   text-align: center;
                 }
               }
               &.goods_total {
                 width: 100px;
-                font: bold 18px/40px "Microsoft YaHei";
-                color: rgb(255, 68, 0);
+                font: bold 16px/40px Verdana,Tahoma,arial;
+                color: #ff4400;
               }
               &.goods_oper {
                 width: 65px;
+                >div{
+                  >a{
+                    font:12px "宋体";
+                    cursor: pointer;
+                    &:hover{
+                      color:#ff4400;
+                      border-bottom: 1px solid #ff4400;
+                    }
+                  }
+                }
               }
             }
           }
         }
-
       }
     }
   }
@@ -254,11 +266,11 @@
       width: 88%;
       padding: 15px 5px;
       > .foot_left {
-        > input, div {
+        > input, div,label{
           float: left;
           margin-right: 10px;
         }
-        >div{
+        >div,label{
           margin-right:30px;
           >a{
             font:12px "宋体";
@@ -276,6 +288,13 @@
           margin-left: 20px;
           padding-top:8px;
           font:12px "宋体";
+          >span{
+            >span{
+              margin:0 5px;
+              font:bold 20px tohoma,arial;
+              color:#ff4400;
+            }
+          }
         }
       }
     }
@@ -293,4 +312,10 @@
       }
     }
   }
+}
+.resemGoods{
+  display: none;
+}
+.goods_content:hover .resemGoods{
+  display: block;
 }

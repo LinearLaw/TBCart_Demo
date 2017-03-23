@@ -52,15 +52,19 @@
                         <div>{{shopItem.goType}}</div>
                     </div>
                     <div class="goods_price">
-                        <span>￥{{shopItem.price}}</span>
+                        <span>￥{{shopItem.price}}.00</span>
                     </div>
                     <div class="goods_count">
                         <button class="minus" ng-click="shopItem.minus()">-</button>
                         <input type="text" ng-model="shopItem.count"/>
                         <button class="plus" ng-click="shopItem.plus()">+</button>
                     </div>
-                    <div class="goods_total">￥{{shopItem.count*shopItem.price}}</div>
-                    <div class="goods_oper"></div>
+                    <div class="goods_total">￥{{shopItem.count*shopItem.price}}.00</div>
+                    <div class="goods_oper">
+                        <div><a>移入收藏夹</a></div>
+                        <div><a ng-click="delThis(item,shopItem)">删除</a></div>
+                        <div class="resemGoods"><a>相似宝贝</a></div>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -75,16 +79,16 @@
         <div class="con_left fl">
             <div class="foot_left fl">
                 <input type="checkbox" ng-change="allSel2()" ng-model="F_Sel"/>
-                <label ><a>全选</a></label>
+                <label class="fl"><a>全选</a></label>
                 <div><a>删除</a></div>
                 <div><a>清除失效宝贝</a></div>
                 <div><a>移入收藏夹</a></div>
                 <div><a>分享</a></div>
             </div>
             <div class="footer_right fr">
-                <div><span>已选商品{{count}}件</span></div>
-                <div><span>合计（不含运费）:</span></div>
-                <div><span>{{totalPrice}}</span></div>
+                <div><span>已选商品<span>{{count}}</span>件</span></div>
+                <div><span>合计（不含运费）:<span>{{totalPrice}}.00</span></span>
+                </div>
             </div>
         </div>
         <button class="con_right fr">结 算</button>
