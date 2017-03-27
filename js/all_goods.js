@@ -3,11 +3,16 @@
  */
 angular.module("AGoods", [])
     .controller("AGoods_Ctrl", ["$scope", "$http", function ($scope, $http) {
-        //1、监视总价的变化，渲染总价和数量
-        function watchPrice() {
+
+        /**
+         * @func watchPrice
+         * @desc 监视总价的变化，渲染总价和数量
+         * @param {object} list 商品列表信息
+         */
+        function watchPrice(list) {
             var sum = 0;
             var count = 0;
-            angular.forEach($scope.list, function (value, key) {
+            angular.forEach(list, function (value, key) {
                 for (var i = 0; i < value.shopGoods.length; i++) {
                     if (value.shopGoods[i].checkitem) {
                         sum += value.shopGoods[i].count * value.shopGoods[i].price;
@@ -19,10 +24,15 @@ angular.module("AGoods", [])
             $scope.count = count;
         }
 
-        //4、所有商品全选功能
-        function commonSel(obj) {
+        /**
+         * @func commonSel
+         * @desc 所有商品全选功能
+         * @param {boolean} obj 当前是否已全选
+         * @param {object} list 商品列表信息
+         */
+        function commonSel(obj,list) {
             if (obj == true) {
-                angular.forEach($scope.list, function (value, key) {
+                angular.forEach(list, function (value, key) {
                     value.S_Sel = true;
                     $scope.G_Sel = true;
                     $scope.F_Sel = true;
@@ -31,7 +41,7 @@ angular.module("AGoods", [])
                     }
                 })
             } else {
-                angular.forEach($scope.list, function (value, key) {
+                angular.forEach(list, function (value, key) {
                     value.S_Sel = false;
                     $scope.G_Sel = false;
                     $scope.F_Sel = false;
@@ -40,28 +50,39 @@ angular.module("AGoods", [])
                     }
                 })
             }
-            watchPrice();
+            watchPrice(list);
         }
 
 
-        //3、定义初始化值
+        /**
+         * @desc 定义初始化值
+         */
         $scope.count = 0;//当前以及选中的商品数量
         $scope.totalPrice = 0;//所有选中商品的总价
         $scope.G_Sel = false;//商品全选按钮初始值
         $scope.F_Sel = false;//底部结算全选按钮初始值
+        $scope.list = null;
         $scope.render = function () {
             watchPrice();
         }
 
-        //5、上面的全选按钮
+        /**
+         * @desc 上部分的全选按钮
+         */
         $scope.allSel1 = function () {
-            commonSel($scope.G_Sel);
+            commonSel($scope.G_Sel,$scope.list);
         }
-        //6、下面的全选按钮
+
+        /**
+         * @desc 下部分的全选按钮
+         */
         $scope.allSel2 = function () {
-            commonSel($scope.F_Sel);
+            commonSel($scope.F_Sel,$scope.list);
         }
-        //7、当前店铺商品全选
+
+        /**
+         * @desc 当前店铺商品全选
+         */
         var thisShop = function () {
             if (this.S_Sel) {
                 for (var i = 0; i < this.shopGoods.length; i++) {
@@ -72,22 +93,23 @@ angular.module("AGoods", [])
                     this.shopGoods[i].checkitem = false;
                 }
             }
-            watchPrice();
+            watchPrice($scope.list);
         }
 
-        //8、模拟ajax，获取json数据进行处理，渲染到页面中
+        /**
+         * @desc 模拟ajax，获取json数据进行处理，渲染到页面中
+         */
         $http({
             url: "../data/cart.json"
         }).then(function (res) {
             $scope.list = res.data;
-            //console.log($scope.list);
             //8.1、定义增加和减少商品数量的方法
             var minus = function () {
                 if (this.count == 0) {
                     return;
                 } else {
                     this.count--;
-                    watchPrice();
+                    watchPrice($scope.list);
                 }
             }
             var plus = function () {
@@ -96,7 +118,7 @@ angular.module("AGoods", [])
                 }
                 else {
                     this.count++;
-                    watchPrice();
+                    watchPrice($scope.list);
                 }
             }
             //8.2、遍历$scope.list数组，将minus和plus方法都加入
@@ -109,16 +131,21 @@ angular.module("AGoods", [])
             console.log($scope.list);
         })
 
-        //9、所有商品数量
+        /**
+         * @desc 所有商品数量计算
+         */
         var sumCount = 0;
         angular.forEach($scope.list, function (value, key) {
             console.log(value.shopGoods.length);
             sumCount += value.shopGoods.length;
         })
-
         $scope.totalCount = sumCount;
 
-        //10、点击删除，将当前商品删除
+        /**
+         * @param 点击删除，将当前商品删除
+         * @param item
+         * @param shopItem
+         */
         $scope.delThis = function (item, shopItem) {
             //console.log(1);
             var index_1 = $scope.list.indexOf(item);
@@ -133,71 +160,73 @@ angular.module("AGoods", [])
                 return;
             }
         }
-        //11、店铺数据(初回版本)
-        //$scope.list = [{
-        //    shopName: "新生格度",
-        //    shopGoodsSel: thisShop,
-        //    S_Sel: false,
-        //    shopGoods: [{
-        //        id: 1,
-        //        imgSrc: "../images/tb20.jpg",
-        //        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
-        //        goColor: "颜色：【无绒】浅海蓝",
-        //        goType: "尺码：L",
-        //        price: 57.00,
-        //        count: 1,
-        //        checkitem: false,
-        //        minus: minus,
-        //        plus: plus
-        //    }, {
-        //        id: 2,
-        //        imgSrc: "../images/tb20.jpg",
-        //        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
-        //        goColor: "颜色：【无绒】浅海蓝",
-        //        goType: "尺码：L",
-        //        price: 57.00,
-        //        count: 1,
-        //        checkitem: false,
-        //        minus: minus,
-        //        plus: plus
-        //    }],
-        //}, {
-        //    shopName: "新生格度",
-        //    shopGoodsSel: thisShop,
-        //    S_Sel: false,
-        //    shopGoods: [{
-        //        id: 1,
-        //        imgSrc: "../images/tb20.jpg",
-        //        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
-        //        goColor: "颜色：【无绒】浅海蓝",
-        //        goType: "尺码：L",
-        //        price: 57.00,
-        //        count: 1,
-        //        checkitem: false,
-        //        minus: minus,
-        //        plus: plus
-        //    }, {
-        //        id: 2,
-        //        imgSrc: "../images/tb20.jpg",
-        //        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
-        //        goColor: "颜色：【无绒】浅海蓝",
-        //        goType: "尺码：L",
-        //        price: 57.00,
-        //        count: 1,
-        //        checkitem: false,
-        //        minus: minus,
-        //        plus: plus
-        //    }, {
-        //        id: 3,
-        //        imgSrc: "../images/tb20.jpg",
-        //        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
-        //        goColor: "颜色：【无绒】浅海蓝",
-        //        goType: "尺码：L",
-        //        price: 57.00,
-        //        count: 1,
-        //        checkitem: false,
-        //        minus: minus,
-        //        plus: plus
-        //    }]
-        //}]
     }])
+
+
+//11、店铺数据(初回版本)
+//$scope.list = [{
+//    shopName: "新生格度",
+//    shopGoodsSel: thisShop,
+//    S_Sel: false,
+//    shopGoods: [{
+//        id: 1,
+//        imgSrc: "../images/tb20.jpg",
+//        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+//        goColor: "颜色：【无绒】浅海蓝",
+//        goType: "尺码：L",
+//        price: 57.00,
+//        count: 1,
+//        checkitem: false,
+//        minus: minus,
+//        plus: plus
+//    }, {
+//        id: 2,
+//        imgSrc: "../images/tb20.jpg",
+//        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+//        goColor: "颜色：【无绒】浅海蓝",
+//        goType: "尺码：L",
+//        price: 57.00,
+//        count: 1,
+//        checkitem: false,
+//        minus: minus,
+//        plus: plus
+//    }],
+//}, {
+//    shopName: "新生格度",
+//    shopGoodsSel: thisShop,
+//    S_Sel: false,
+//    shopGoods: [{
+//        id: 1,
+//        imgSrc: "../images/tb20.jpg",
+//        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+//        goColor: "颜色：【无绒】浅海蓝",
+//        goType: "尺码：L",
+//        price: 57.00,
+//        count: 1,
+//        checkitem: false,
+//        minus: minus,
+//        plus: plus
+//    }, {
+//        id: 2,
+//        imgSrc: "../images/tb20.jpg",
+//        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+//        goColor: "颜色：【无绒】浅海蓝",
+//        goType: "尺码：L",
+//        price: 57.00,
+//        count: 1,
+//        checkitem: false,
+//        minus: minus,
+//        plus: plus
+//    }, {
+//        id: 3,
+//        imgSrc: "../images/tb20.jpg",
+//        goTitle: "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+//        goColor: "颜色：【无绒】浅海蓝",
+//        goType: "尺码：L",
+//        price: 57.00,
+//        count: 1,
+//        checkitem: false,
+//        minus: minus,
+//        plus: plus
+//    }]
+//}]
