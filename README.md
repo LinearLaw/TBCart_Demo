@@ -7,23 +7,23 @@
     4、顺便练习了一下css和html布局
     5、模拟了ajax请求数据，获取json中的内容
 ##  结构
-|-data              //json数据文件夹
-|-fonts             //字体文件
-|-images            //图片资源
+    |-data              //json数据文件夹
+    |-fonts             //字体文件
+    |-images            //图片资源
 
-|-js                //主js文件夹
-|---all_goods.js    //购物车详细内容模块
-|---index.js        //配置购物车主模块
-|---nav.js          //顶部header和底部footer
+    |-js                //主js文件夹
+    |---all_goods.js    //购物车详细内容模块
+    |---index.js        //配置购物车主模块
+    |---nav.js          //顶部header和底部footer
 
-|-less
-|---base.less       //通用样式
-|---index.less      //主页面样式
-|---nav.less        //底部导航样式
+    |-less
+    |---base.less       //通用样式
+    |---index.less      //主页面样式
+    |---nav.less        //底部导航样式
 
-|-pages
-|---all_goods.html  //购物车详细信息页面
-|---index.html      //主页面
-|---nav.html        //header和footer
+    |-pages
+    |---all_goods.html  //购物车详细信息页面
+    |---index.html      //主页面
+    |---nav.html        //header和footer
 
-|-plugins           //用到的js插件
+    |-plugins           //用到的js插件
