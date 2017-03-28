@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Demo-购物车</title>
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper.css">
     <link rel="stylesheet/less" href="../less/base.less"/>
     <link rel="stylesheet/less" href="../less/index.less"/>
+    <link rel="stylesheet/less" href="../less/nav.less">
     <script src="../plugins/less/less.js"></script>
 </head>
 <body ng-app="cart">
@@ -18,6 +20,22 @@
 <script src="../js/all_goods.js"></script>
 <script>
     location.href="#!/nav/agoods";
+</script>
+
+<script src="../plugins/swiper/js/swiper.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 1000,
+        autoplayDisableOnInteraction: false,
+        observer:true,
+        observeParents:true
+    });
 </script>
 </body>
 </html>

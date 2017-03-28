@@ -27,7 +27,8 @@
 <section id="logo">
     <div class="container">
         <div class="head_left_logo fl">
-            <div class="logo fl"/></div>
+            <div class="logo fl"/>
+        </div>
         <div class="tb_title">淘宝网</div>
 
         <h1 class="fl">购物车</h1>
@@ -44,18 +45,47 @@
     </div>
 </section>
 <!--购物车主体内容-->
-<div ui-view>
+<div ui-view="carts">
 
-</div>
 </div>
 
 <!--热卖广告-->
-<section>
-
+<section id="ads">
+    <div class="container">
+        <!-- tab标题栏 -->
+        <div class="hot_ads_title">
+            <ul>
+                <li><a href="#">掌柜热卖</a></li>
+                <li><a href="#">最近收藏的</a></li>
+                <li><a href="#">最近浏览的</a></li>
+                <li><a href="#">猜你喜欢的</a></li>
+            </ul>
+        </div>
+        <div class="line"></div>
+        <div class="hot_ads_content">
+            <!-- 小轮播图 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!--底部-->
-<footer>
-
+<footer id="footer">
+    <div>
+        
+    </div>
 </footer>
+
+
 

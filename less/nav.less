@@ -1,0 +1,80 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    //background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    height: 400px;
+    text-align: center;
+    font-size: 18px;
+    //background: #fff;
+    background-color: red;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+/*热卖广告*/
+#ads{
+    margin-top:15px;
+    >.container{
+        background-color: #fff;
+        >.hot_ads_title{
+            width: 100%;
+            height:100%;
+            >ul{
+                height:100%;
+                >li{
+                    width: 80px;
+                    height: 35px;
+                    float: left;
+                    text-align: center;
+                    >a{
+                        color:rgb(60,60,60);
+                        font:bold 14px/35px "Hiragino Sans GB","Lantinghei SC","Microsoft Yahei",SimSun
+                    }
+                    &+li{
+                        width: 100px;
+                        >a{
+                            padding-left:15px;
+                            border-left:1px solid #f0f0f0;
+                        }
+                    }
+                }
+            }
+        }
+        >.line{
+            width: 100%;
+            height: 2px;
+            background-color: #f0f0f0;
+            float: left;
+            display: block;
+            margin-bottom:25px;
+        }
+        >.hot_ads_content{
+            width: 100%;
+            height:100%;
+        }
+    }
+}
