@@ -18,8 +18,8 @@ body {
     height: 400px;
     text-align: center;
     font-size: 18px;
-    //background: #fff;
-    background-color: red;
+    background: #fff;
+    //background-color: red;
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -75,6 +75,79 @@ body {
         >.hot_ads_content{
             width: 100%;
             height:100%;
+        }
+    }
+}
+
+#footer{
+    padding-bottom: 30px;
+    >.container{
+        ul{
+            text-align: center;
+            >li{
+                float: left;
+                padding:5px 0;
+                >a{
+                    padding:0 10px;
+                    font:12px "Hiragino Sans GB","Lantinghei SC","Microsoft Yahei",SimSun;
+                    color:rgb(60,60,60);
+                }
+            }
+        }
+        >.foot_paterner{
+            height:60px;
+            display: block;
+            border-bottom: 1px solid #f0f0f0;
+            >ul{
+                >li{
+                    &+li{
+                        >a{
+                            border-left:1px solid #f0f0f0;
+                        }
+                    }
+                }
+            }
+        }
+        >.foot_copyright{
+            >.line_1{
+                width: 100%;
+                height:35px;
+                display: block;
+            }
+            >.line_2{
+                height:70px;
+                >ul{
+                    >li{
+                        &+li{
+                            >a{
+                                border-left:1px solid #f0f0f0;
+                            }
+                        }
+                        &:last-child{
+                            >a{
+                                border:0;
+                            }
+                        }
+                    }
+                }
+            }
+            >.line_3{
+                padding-left:10px;
+                >.marker{
+                    width: 25px;
+                    height: 25px;
+                    margin:0 5px;
+                    background-size:540px 128px;
+                    background-image: url("../images/copyright.png");
+                    background-position:  0px -100px;
+                    vertical-align: middle;
+                }
+                >span{
+                    float: left;
+                    padding-top:5px;
+                    font:12px "Hiragino Sans GB","Lantinghei SC","Microsoft Yahei",SimSun;
+                }
+            }
         }
     }
 }

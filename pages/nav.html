@@ -72,9 +72,6 @@
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </div>
@@ -82,8 +79,32 @@
 
 <!--底部-->
 <footer id="footer">
-    <div>
-        
+    <div class="container">
+        <div class="foot_paterner">
+            <ul  class="clearfix">
+                <li ng-repeat="server in service"><a href="{{server.url}}">{{server.content}}</a></li>
+            </ul>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        <div class="foot_copyright">
+            <div class="line_1">
+                <ul class="clearfix">
+                    <li ng-repeat="infos in navinfo"><a href="{{infos.url}}">{{infos.content}}</a></li>
+                </ul>
+            </div>
+            <div class="line_2">
+                <ul class="clearfix">
+                    <li ng-repeat="about in copys"><a href="{{about.url}}">{{about.content}}</a></li>
+                </ul>
+            </div>
+            <div class="line_3 clearfix">
+                <div class="marker fl"></div>
+                <span>浙公网安备 33010002000078号</span>
+            </div>
+        </div>
+
     </div>
 </footer>
 
