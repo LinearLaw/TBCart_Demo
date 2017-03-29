@@ -287,20 +287,21 @@
 
 //5、结算
 #foot {
-  display: none;
+  display: block;
   > .container {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    margin-left: -495px;
+    margin-top:20px;
     background-color: #E5E5E5;
     > .con_left {
       width: 88%;
-      padding: 15px 5px;
+      padding: 10px 5px;
+      line-height:40px;
       > .foot_left {
         > input, div,label{
           float: left;
-          margin-right: 10px;
+        }
+        >input{
+          margin-right:10px;
+          margin-top:10px;
         }
         >div,label{
           margin-right:30px;
@@ -350,4 +351,13 @@
 }
 .goods_content:hover .resemGoods{
   display: block;
+}
+.normal{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -495px;
+}
+.static{
+  position: static;
 }

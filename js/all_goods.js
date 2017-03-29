@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/3/20.
  */
 angular.module("AGoods", [])
-    .controller("AGoods_Ctrl", ["$scope", "$http", function ($scope, $http) {
+    .controller("AGoods_Ctrl", ["$scope", "$http","$document", function ($scope, $http,$document) {
 
         /**
          * @func watchPrice
@@ -160,4 +160,26 @@ angular.module("AGoods", [])
                 return;
             }
         }
+
+        /**
+         * @desc 页面滑动的时候，把结算栏固定到底部或释放
+         */
+        $document.on("scroll",function(){
+            var body = document.querySelector("body");
+            var pages = document.querySelector("#allPages")
+            var $ = angular.element;
+            var foot = document.querySelector("#foot");
+            //console.log(body.scrollTop);
+            //console.log(pages.offsetHeight);
+            var posi = pages.offsetHeight - body.scrollTop;
+            console.log(posi)
+            if(posi < 1300){
+                $(foot).removeClass("normal");
+                $(foot).addClass("static");
+            }else{
+                $(foot).removeClass("static");
+                $(foot).addClass("normal");
+            }
+        })
+
     }])

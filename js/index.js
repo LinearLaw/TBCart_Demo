@@ -6,7 +6,10 @@ angular.module("cart",["ui.router","AGoods","nav"])
 
     }])
     .config(["$stateProvider", function ($stateProvider) {
-        //1、全部商品模块配置
+
+        /**
+         * @desc 购物车所有商品信息模块的配置
+         */
         $stateProvider.state({
             name:"nav.agoods",
             url:"/agoods",
@@ -17,12 +20,14 @@ angular.module("cart",["ui.router","AGoods","nav"])
                 }
             }
         })
-        //2、顶部导航栏设置
+
+        /**
+         * @desc 顶部导航栏设置
+         */
         $stateProvider.state({
             name:"nav",
             url:"/nav",
             templateUrl:"../pages/nav.html",
             controller:"nav_Ctrl"
         })
-
     }])
