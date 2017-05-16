@@ -3,7 +3,6 @@
  */
 angular.module("AGoods", [])
     .controller("AGoods_Ctrl", ["$scope", "$http","$document", function ($scope, $http,$document) {
-
         /**
          * @func watchPrice
          * @desc 监视总价的变化，渲染总价和数量
@@ -97,7 +96,7 @@ angular.module("AGoods", [])
         }
 
         /**
-         * @desc 模拟ajax，获取json数据进行处理，渲染到页面中
+         * @desc 获取json数据进行处理，渲染到页面中
          */
         $http({
             url: "../data/cart.json"
@@ -128,7 +127,6 @@ angular.module("AGoods", [])
                     $scope.list[i].shopGoods[j].plus = plus;
                 }
             }
-            console.log($scope.list);
         })
 
         /**
@@ -172,7 +170,6 @@ angular.module("AGoods", [])
             //console.log(body.scrollTop);
             //console.log(pages.offsetHeight);
             var posi = pages.offsetHeight - body.scrollTop;
-            console.log(posi)
             if(posi < 1300){
                 $(foot).removeClass("normal");
                 $(foot).addClass("static");
