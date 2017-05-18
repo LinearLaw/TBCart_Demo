@@ -167,8 +167,6 @@ angular.module("AGoods", [])
             var pages = document.querySelector("#allPages")
             var $ = angular.element;
             var foot = document.querySelector("#foot");
-            //console.log(body.scrollTop);
-            //console.log(pages.offsetHeight);
             var posi = pages.offsetHeight - body.scrollTop;
             if(posi < 1300){
                 $(foot).removeClass("normal");
