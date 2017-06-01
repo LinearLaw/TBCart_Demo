@@ -7,17 +7,14 @@ angular.module("nav", [])
         $scope.service = null;
         $scope.navinfo = null;
         $scope.copys = null;
-
         /**
          * @desc 模拟ajax获取服务商的json信息
          */
         $http({
             url: "../data/service.json"
         }).then(function (res) {
-            //console.log(res);
             $scope.service = res.data;
         })
-
         /**
          * @desc 模拟ajax获取关于淘宝的信息
          */
@@ -26,7 +23,6 @@ angular.module("nav", [])
         }).then(function (res) {
             $scope.navinfo = res.data;
         })
-
         /**
          * @desc 获取淘宝的许可证信息
          */

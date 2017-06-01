@@ -22,7 +22,6 @@ angular.module("AGoods", [])
             $scope.totalPrice = sum;
             $scope.count = count;
         }
-
         /**
          * @func commonSel
          * @desc 所有商品全选功能
@@ -51,34 +50,29 @@ angular.module("AGoods", [])
             }
             watchPrice(list);
         }
-
-
         /**
          * @desc 定义初始化值
          */
         $scope.count = 0;//当前以及选中的商品数量
         $scope.totalPrice = 0;//所有选中商品的总价
         $scope.G_Sel = false;//商品全选按钮初始值
-        $scope.F_Sel = false;//底部结算全选按钮初始值
+        $scope.F_Sel = false;//底部结算全选按钮的初始值
         $scope.list = null;
         $scope.render = function () {
             watchPrice();
         }
-
         /**
          * @desc 上部分的全选按钮
          */
         $scope.allSel1 = function () {
             commonSel($scope.G_Sel,$scope.list);
         }
-
         /**
          * @desc 下部分的全选按钮
          */
         $scope.allSel2 = function () {
             commonSel($scope.F_Sel,$scope.list);
         }
-
         /**
          * @desc 当前店铺商品全选
          */
@@ -94,7 +88,6 @@ angular.module("AGoods", [])
             }
             watchPrice($scope.list);
         }
-
         /**
          * @desc 获取json数据进行处理，渲染到页面中
          */
@@ -128,7 +121,6 @@ angular.module("AGoods", [])
                 }
             }
         })
-
         /**
          * @desc 所有商品数量计算
          */
@@ -138,7 +130,6 @@ angular.module("AGoods", [])
             sumCount += value.shopGoods.length;
         })
         $scope.totalCount = sumCount;
-
         /**
          * @param 点击删除，将当前商品删除
          * @param item
@@ -158,7 +149,6 @@ angular.module("AGoods", [])
                 return;
             }
         }
-
         /**
          * @desc 页面滑动的时候，把结算栏固定到底部或释放
          */

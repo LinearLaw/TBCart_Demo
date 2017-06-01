@@ -20,7 +20,6 @@ angular.module("cart",["ui.router","AGoods","nav"])
                 }
             }
         })
-
         /**
          * @desc 顶部导航栏设置
          */
