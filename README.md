@@ -1,5 +1,9 @@
 # TBCart_Demo
     淘宝网购物车Demo。
+
+##  框架
+    angular版本为v1.6.3
+
 ##  基本功能
     1、使用angular进行了模块划分；
     2、ui-router路由嵌套实现页面加载；
