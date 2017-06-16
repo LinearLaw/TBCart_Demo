@@ -30,3 +30,16 @@ angular.module("cart",["ui.router","AGoods","nav"])
             controller:"nav_Ctrl"
         })
     }])
+
+window.onload= function () {
+    var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 1500,
+            autoplayDisableOnInteraction: false,
+            observer:true,
+            observeParents:true
+    });
+}
