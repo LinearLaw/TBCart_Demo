@@ -166,5 +166,4 @@ angular.module("AGoods", [])
                 $(foot).addClass("normal");
             }
         })
-
     }])

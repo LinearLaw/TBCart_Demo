@@ -6,7 +6,6 @@ angular.module("cart",["ui.router","AGoods","nav"])
 
     }])
     .config(["$stateProvider", function ($stateProvider) {
-
         /**
          * @desc 购物车所有商品信息模块的配置
          */
@@ -30,7 +29,6 @@ angular.module("cart",["ui.router","AGoods","nav"])
             controller:"nav_Ctrl"
         })
     }])
-
 window.onload= function () {
     var swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
