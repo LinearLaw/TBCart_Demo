@@ -1,0 +1,117 @@
+<template>
+    <div>
+        <!--3、tab栏-->
+        <section id="tab">
+            <div class="container clearfix">
+                <div class="tab_left fl">
+                    <ul>
+                        <!--这里通过配置路由来实现三者的切换-->
+                        <li class="fl">
+                            <a ui-sref="agoods" class="active">全部商品 {{totalCount}}</a>
+                        </li>
+                        <li class="fl"><a>降价商品 0 </a></li>
+                        <li class="fl"><a>库存紧张 0 </a></li>
+                    </ul>
+                </div>
+                <div class="tab_right fr">
+                    <span>已选商品（不含运费）</span>
+                    <span class="allCount">{{count}}</span>
+                    <button>结算</button>
+                </div>
+                <div class="baseLine fl">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+        <!--4、详情页-->
+        <section id="goods_content">
+            <div class="container">
+                <div class="table_head clearfix">
+                    <div>
+                        <input type="checkbox" ng-change="allSel1()" ng-model="G_Sel"/>
+                        <span>全选</span>
+                    </div>
+                    <div>商品信息</div>
+                    <div>单价</div>
+                    <div>数量</div>
+                    <div>金额</div>
+                    <div>操作</div>
+                </div>
+                <div class="shopGoods">
+                    <div class="table_body clearfix" ng-repeat="item in list">
+                        <div class="shop_name">
+                            <input type="checkbox" ng-change="item.shopGoodsSel()" ng-model="item.S_Sel"/>
+                            <span>店铺：</span>
+                            <a>item.shopName</a>
+                        </div>
+                        <div class="goods_box">
+                        <div class="goods_content" ng-repeat="shopItem in item.shopGoods track by $index">
+                            <div class="goods_sel"><input type="checkbox" ng-click="render()" ng-model="shopItem.checkitem"/></div>
+                            <div class="goods_pic"><img src="shopItem.imgSrc" alt=""/></div>
+                            <div class="goods_title"><a href="#">shopItem.goTitle</a></div>
+                            <div class="goods_type">
+                                <div>shopItem.goColor</div>
+                                <div>shopItem.goType</div>
+                            </div>
+                            <div class="goods_price">
+                                <span>￥shopItem.price.00</span>
+                            </div>
+                            <div class="goods_count">
+                                <button class="minus" ng-click="shopItem.minus()">-</button>
+                                <input type="text" ng-model="shopItem.count"/>
+                                <button class="plus" ng-click="shopItem.plus()">+</button>
+                            </div>
+                            <div class="goods_total">￥shopItem.count*shopItem.price.00</div>
+                            <div class="goods_oper">
+                                <div><a>移入收藏夹</a></div>
+                                <div><a ng-click="delThis(item,shopItem)">删除</a></div>
+                                <div class="resemGoods"><a>相似宝贝</a></div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!--5、结算-->
+        <footer id="foot" class="normal">
+            <div class="container clearfix">
+                <div class="con_left fl">
+                    <div class="foot_left fl">
+                        <input type="checkbox" ng-change="allSel2()" ng-model="F_Sel"/>
+                        <label class="fl"><a>全选</a></label>
+                        <div><a>删除</a></div>
+                        <div><a>清除失效宝贝</a></div>
+                        <div><a>移入收藏夹</a></div>
+                        <div><a>分享</a></div>
+                    </div>
+                    <div class="footer_right fr">
+                        <div><span>已选商品<span>{{count}}</span>件</span></div>
+                        <div><span>合计（不含运费）:<span>{{totalPrice}}.00</span></span>
+                        </div>
+                    </div>
+                </div>
+                <button class="con_right fr">结 算</button>
+            </div>
+        </footer>
+    </div>
+</template>
+
+<script>
+    export default{
+        data(){
+            return{
+                count:0,
+                totalPrice:0,
+                totalCount:0
+            }
+        },
+    }
+</script>
+<style lang="less" scoped>
+
+</style>
+
+

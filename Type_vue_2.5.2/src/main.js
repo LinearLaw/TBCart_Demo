@@ -6,6 +6,7 @@ import router from './router'
 import Vuex from 'vuex'
 
 import "./assets/css/common.css"
+import "./assets/js/swiper/css/swiper.min.css"
 
 Vue.use(Vuex);
 
@@ -15,7 +16,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  i18n,
   template: '<App/>',
   components: { App }
 })
