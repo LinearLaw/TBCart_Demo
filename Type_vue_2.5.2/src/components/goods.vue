@@ -111,6 +111,67 @@
     }
 </script>
 <style lang="less" scoped>
+//3、tab栏
+#tab {
+  > .container {
+    > .tab_left {
+      padding-top: 5px;
+      height: 100%;
+      > ul {
+        > li {
+          height:35px;
+          font:bold 16px "microsoft yahei";
+          cursor: pointer;
+          padding-bottom:10px;
+          >a{
+            padding-left: 20px;
+            padding-right:30px;
+            border-left:1px solid #f0f0f0;
+            color:rgb(60, 60, 60);
+          }
+          & + li {
+          }
+          >.active{
+            color:#ff4400;
+          }
+        }
+        >li:first-child{
+          a{
+            border:0;
+          }
+        }
+      }
+    }
+    > .tab_right {
+      font-size:14px;
+      font-family: "宋体";
+      >.allCount{
+        color:#ff4400;
+        font-weight:bold;
+      }
+      > button {
+        width: 56px;
+        height: 26px;
+        border-radius: 4px;
+        background-color: #AAA;
+        color: #fff;
+        &:hover {
+          background-color: #ff4400;
+        }
+      }
+    }
+    >.baseLine{
+      width: 100%;
+      height:2px;
+      background-color: #f0f0f0;
+      >.line{
+        width: 128px;
+        height: 100%;
+        background-color: #ff4400;
+      }
+    }
+  }
+}
 //5、结算
 #foot {
   display: block;
