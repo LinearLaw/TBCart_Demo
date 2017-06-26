@@ -172,6 +172,137 @@
     }
   }
 }
+//4、详情页
+#goods_content {
+  > .container {
+    > .table_head {
+      padding:15px 0;
+      padding-left:10px;
+      > div {
+        float: left;
+        font-size:14px;
+      }
+      > div:first-child {
+        width: 150px;
+      }
+      > div:nth-child(2) {
+        width: 390px;
+      }
+      > div:nth-child(3) {
+        width: 135px;
+      }
+      > div:nth-child(4) {
+        width: 135px;
+      }
+      > div:nth-child(5) {
+        width: 100px;
+      }
+      > div:nth-child(6) {
+        width: 65px;
+      }
+    }
+    > .shopGoods {
+      font-size:14px;
+      > .table_body {
+        margin-top:10px;
+        > .shop_name {
+          width: 100%;
+          height: 35px;
+          padding-left:10px;
+          >a,span{
+            font:12px "宋体";
+          }
+        }
+        >.goods_box{
+          border: 1px solid rgb(232, 232, 232);
+          width: 100%;
+          > .goods_content {
+            height: 120px;
+            padding: 15px 20px;
+            &+.goods_content{
+              border-top:1px solid rgb(232,232,232);
+            }
+            background-color: #fcfcfc;
+            > div {
+              height: 100%;
+              float: left;
+              &.goods_sel {
+                width: 25px;
+              }
+              &.goods_pic {
+                width: 90px;
+              }
+              &.goods_title {
+                width: 220px;
+                padding-right:40px;
+                >a{
+                  font-size:12px;
+                  color:rgb(60,60,60);
+                  &:hover{
+                    color:#ff4400;
+                    border-bottom:1px solid #ff4400;
+                  }
+                }
+              }
+              &.goods_type {
+                width: 170px;
+                font-size:12px;
+                color:rgb(156, 156, 156);
+                >div{
+                  display: block;
+                }
+              }
+              &.goods_price {
+                width: 135px;
+                font: bold 14px/40px "宋体";
+                color:rgb(60, 60, 60);
+                >span{
+                  font-family: Verdana,Tahoma,arial;
+                }
+              }
+              &.goods_count {
+                width: 135px;
+                padding-top: 10px;
+                button {
+                  width: 20px;
+                  height: 25px;
+                  background-color: #F0F0F0;
+                  cursor: pointer;
+                  &:hover {
+                    border: 1px solid #ff4400;
+                  }
+                }
+                > input {
+                  width: 42px;
+                  height: 27px;
+                  text-align: center;
+                }
+              }
+              &.goods_total {
+                width: 100px;
+                font: bold 16px/40px Verdana,Tahoma,arial;
+                color: #ff4400;
+              }
+              &.goods_oper {
+                width: 65px;
+                >div{
+                  >a{
+                    font:12px "宋体";
+                    cursor: pointer;
+                    &:hover{
+                      color:#ff4400;
+                      border-bottom: 1px solid #ff4400;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 //5、结算
 #foot {
   display: block;
