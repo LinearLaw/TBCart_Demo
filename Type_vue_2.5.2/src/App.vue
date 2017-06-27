@@ -217,5 +217,47 @@ export default {
     }
   }
 }
-
+/*热卖广告*/
+#ads{
+    margin-top:15px;
+    >.container{
+        background-color: #fff;
+        >.hot_ads_title{
+            width: 100%;
+            height:100%;
+            >ul{
+                height:100%;
+                >li{
+                    width: 80px;
+                    height: 35px;
+                    float: left;
+                    text-align: center;
+                    >a{
+                        color:rgb(60,60,60);
+                        font:bold 14px/35px "Hiragino Sans GB","Lantinghei SC","Microsoft Yahei",SimSun
+                    }
+                    &+li{
+                        width: 100px;
+                        >a{
+                            padding-left:15px;
+                            border-left:1px solid #f0f0f0;
+                        }
+                    }
+                }
+            }
+        }
+        >.line{
+            width: 100%;
+            height: 2px;
+            background-color: #f0f0f0;
+            float: left;
+            display: block;
+            margin-bottom:25px;
+        }
+        >.hot_ads_content{
+            width: 100%;
+            height:100%;
+        }
+    }
+}
 </style>

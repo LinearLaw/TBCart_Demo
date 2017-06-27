@@ -47,3 +47,18 @@ input,button{
     width:100%;
     height:100%;
 }
+.resemGoods{
+  display: none;
+}
+.goods_content:hover .resemGoods{
+  display: block;
+}
+.normal{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -495px;
+}
+.static{
+  position: static;
+}
