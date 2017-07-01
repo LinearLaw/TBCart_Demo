@@ -25,7 +25,7 @@
         </div>
 
         <!--2、logo-->
-        <div id="logo">
+        <section id="logo">
             <div class="container">
                 <div class="head_left_logo fl">
                     <div class="logo fl"/>
@@ -43,15 +43,15 @@
                 <input type="text" name="search"/>
                 <button>搜 索</button>
             </div>
-        </div>
+        </section>
 
         <!--3、购物车主体内容-->
-        <div>
+        <section>
             <router-view></router-view>
-        </div>
+        </section>
 
         <!--4、热卖广告-->
-        <div id="ads">
+        <section id="ads">
             <div class="container">
                 <!-- tab标题栏 -->
                 <div class="hot_ads_title">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!--5、底部-->
         <footer id="footer">
@@ -123,7 +123,16 @@ export default {
       }
   },
   mounted(){
-    
+    var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 1500,
+            autoplayDisableOnInteraction: false,
+            observer:true,
+            observeParents:true
+    });
   }
 }
 </script>

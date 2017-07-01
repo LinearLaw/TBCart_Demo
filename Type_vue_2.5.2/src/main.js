@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 
-import "./assets/js/swiper/css/swiper.min.css"
+import "/static/swiper/css/swiper.min.css"
 import "./assets/css/common.css"
 
 Vue.use(Vuex);

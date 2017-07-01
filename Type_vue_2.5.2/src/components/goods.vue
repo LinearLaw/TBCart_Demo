@@ -108,6 +108,21 @@
                 totalCount:0
             }
         },
+        mounted(){
+          $(document).on("scroll",function(){
+              var body = document.querySelector("body");
+              var pages = document.querySelector("#allPages")
+              var foot = document.querySelector("#foot");
+              var posi = pages.offsetHeight - body.scrollTop;
+              if(posi < 1300){
+                  $(foot).removeClass("normal");
+                  $(foot).addClass("static");
+              }else{
+                  $(foot).removeClass("static");
+                  $(foot).addClass("normal");
+              }
+          })
+        }
     }
 </script>
 <style lang="less" scoped>
