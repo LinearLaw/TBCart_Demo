@@ -1,0 +1,114 @@
+[
+  {
+    "shop_id": 1,
+    "shopName": "新生格度",
+    "shopGoodsSel": "thisShop",
+    "S_Sel": false,
+    "shopGoods": [
+      {
+        "id": 1,
+        "imgSrc": "../images/tb20.jpg",
+        "goTitle": "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+        "goColor": "颜色：【无绒】浅海蓝",
+        "goType": "尺码：L",
+        "price": 57.00,
+        "count": 1,
+        "checkitem": false
+      },
+      {
+        "id": 2,
+        "imgSrc": "../images/tb20.jpg",
+        "goTitle": "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+        "goColor": "颜色：【无绒】浅海蓝",
+        "goType": "尺码：L",
+        "price": 57.00,
+        "count": 1,
+        "checkitem": false
+      },
+      {
+        "id": 3,
+        "imgSrc": "../images/tb20.jpg",
+        "goTitle": "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+        "goColor": "颜色：【无绒】浅海蓝",
+        "goType": "尺码：L",
+        "price": 57.00,
+        "count": 1,
+        "checkitem": false
+      }
+    ]
+  },
+  {
+    "shop_id": 2,
+    "shopName": "新生格度",
+    "shopGoodsSel": "thisShop",
+    "S_Sel": false,
+    "shopGoods": [
+      {
+        "id": 1,
+        "imgSrc": "../images/tb20.jpg",
+        "goTitle": "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+        "goColor": "颜色：【无绒】浅海蓝",
+        "goType": "尺码：L",
+        "price": 57.00,
+        "count": 1,
+        "checkitem": false
+      },
+      {
+        "id": 2,
+        "imgSrc": "../images/tb20.jpg",
+        "goTitle": "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+        "goColor": "颜色：【无绒】浅海蓝",
+        "goType": "尺码：L",
+        "price": 57.00,
+        "count": 1,
+        "checkitem": false
+      }
+    ]
+  },
+  {
+    "shop_id": 3,
+    "shopName": "新生格度",
+    "shopGoodsSel": "thisShop",
+    "S_Sel": false,
+    "shopGoods": [
+      {
+        "id": 1,
+        "imgSrc": "../images/tb20.jpg",
+        "goTitle": "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+        "goColor": "颜色：【无绒】浅海蓝",
+        "goType": "尺码：L",
+        "price": 57.00,
+        "count": 1,
+        "checkitem": false
+      },
+      {
+        "id": 2,
+        "imgSrc": "../images/tb20.jpg",
+        "goTitle": "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+        "goColor": "颜色：【无绒】浅海蓝",
+        "goType": "尺码：L",
+        "price": 57.00,
+        "count": 1,
+        "checkitem": false
+      }
+    ]
+  },
+  {
+    "shop_id": 4,
+    "shopName": "新生格度",
+    "shopGoodsSel": "thisShop",
+    "S_Sel": false,
+    "shopGoods": [
+      {
+        "id": 1,
+        "imgSrc": "../images/tb20.jpg",
+        "goTitle": "春季衬衫男长袖修身韩版加绒青年纯色男士休闲牛津纺白衬衣男装潮",
+        "goColor": "颜色：【无绒】浅海蓝",
+        "goType": "尺码：L",
+        "price": 57.00,
+        "count": 1,
+        "checkitem": false
+      }
+    ]
+  }
+]

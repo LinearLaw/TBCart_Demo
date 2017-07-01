@@ -1,5 +1,6 @@
 
 import * as types from './mutation-types'
+import axios from "axios"
 
 export const addToCart = ({ commit }, product) => {
   if (product.inventory > 0) {
@@ -7,4 +8,10 @@ export const addToCart = ({ commit }, product) => {
       id: product.id
     })
   }
+}
+export const getServiceList = ({commit})=>{
+  axios.get("/static/json/service.json").then((result)=>{
+    console.log(result);
+    
+  })
 }

@@ -114,13 +114,20 @@
 /**
  * @desc  路由入口
  */
-
+import {mapState,mapActions} from "vuex"
 export default {
   name: 'app',
   data(){
       return{
 
       }
+  },
+  created(){
+      this.getServiceList();
+    //   this.$store.dispatch("getServiceList")
+  },
+  computed:{
+      ...mapState(["service"])
   },
   mounted(){
     var swiper = new Swiper('.swiper-container', {
@@ -133,6 +140,10 @@ export default {
             observer:true,
             observeParents:true
     });
+    
+  },
+  methods:{
+      ...mapActions(["getServiceList"])
   }
 }
 </script>
