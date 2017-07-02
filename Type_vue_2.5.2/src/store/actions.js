@@ -11,7 +11,17 @@ export const addToCart = ({ commit }, product) => {
 }
 export const getServiceList = ({commit})=>{
   axios.get("/static/json/service.json").then((result)=>{
-    console.log(result);
-    
+    commit("GET_SERVICE_LIST",result.data);
   })
 }
+export const getInfosList = ({commit})=>{
+  axios.get("/static/json/navinfo.json").then((result)=>{
+    commit("GET_INFO_LIST",result.data);
+  })
+}
+export const getAboutList = ({commit})=>{
+  axios.get("/static/json/copys.json").then((result)=>{
+    commit("GET_ABOUT_LIST",result.data);
+  })
+}
+

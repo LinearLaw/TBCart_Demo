@@ -1,3 +1,5 @@
 export const state = {
-    service:[]
+    service:[],
+    navinfo:[],
+    copys:[]
 }   

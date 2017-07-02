@@ -83,7 +83,7 @@
             <div class="container">
                 <div class="foot_paterner">
                     <ul  class="clearfix">
-                        <li ng-repeat="server in service"><a href="server.url">server.content</a></li>
+                        <li v-for="server in service"><a href="server.url">{{server.content}}</a></li>
                     </ul>
                     <ul>
                         <li></li>
@@ -92,12 +92,12 @@
                 <div class="foot_copyright">
                     <div class="line_1">
                         <ul class="clearfix">
-                            <li ng-repeat="infos in navinfo"><a href="infos.url">infos.content</a></li>
+                            <li v-if="infos in navinfo"><a href="infos.url">{{infos.content}}</a></li>
                         </ul>
                     </div>
                     <div class="line_2">
                         <ul class="clearfix">
-                            <li ng-repeat="about in copys"><a href="about.url">about.content</a></li>
+                            <li v-if="about in copys"><a href="about.url">{{about.content}}</a></li>
                         </ul>
                     </div>
                     <div class="line_3 clearfix">
@@ -124,10 +124,12 @@ export default {
   },
   created(){
       this.getServiceList();
+      this.getInfosList();
+      this.getAboutList();
     //   this.$store.dispatch("getServiceList")
   },
   computed:{
-      ...mapState(["service"])
+      ...mapState(["service","infos","about"])
   },
   mounted(){
     var swiper = new Swiper('.swiper-container', {
@@ -143,7 +145,7 @@ export default {
     
   },
   methods:{
-      ...mapActions(["getServiceList"])
+      ...mapActions(["getServiceList","getInfosList","getAboutList"])
   }
 }
 </script>
