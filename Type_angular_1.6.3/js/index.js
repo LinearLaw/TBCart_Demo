@@ -28,16 +28,14 @@ angular.module("cart",["ui.router","AGoods","nav"])
             templateUrl:"../pages/nav.html",
             controller:"nav_Ctrl"
         })
+        var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: 1500,
+                autoplayDisableOnInteraction: false,
+                observer:true,
+                observeParents:true
+        });
     }])
-window.onload= function () {
-    var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            paginationClickable: true,
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: 1500,
-            autoplayDisableOnInteraction: false,
-            observer:true,
-            observeParents:true
-    });
-}
