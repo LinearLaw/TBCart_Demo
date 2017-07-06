@@ -92,7 +92,7 @@ angular.module("AGoods", [])
          * @desc 获取json数据进行处理，渲染到页面中
          */
         $http({
-            url: "../../data/cart.json"
+            url: "../data/cart.json"
         }).then(function (res) {
             $scope.list = res.data;
             //8.1、定义增加和减少商品数量的方法
