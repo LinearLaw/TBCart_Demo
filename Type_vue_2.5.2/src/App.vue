@@ -111,9 +111,6 @@
 </template>
 
 <script>
-/**
- * @desc  路由入口
- */
 import {mapState,mapActions} from "vuex"
 export default {
   name: 'app',
@@ -126,10 +123,9 @@ export default {
       this.getServiceList();
       this.getInfosList();
       this.getAboutList();
-    //   this.$store.dispatch("getServiceList")
   },
   computed:{
-      ...mapState(["service","infos","about"])
+      ...mapState(["service","navinfo","copys"])
   },
   mounted(){
     var swiper = new Swiper('.swiper-container', {
