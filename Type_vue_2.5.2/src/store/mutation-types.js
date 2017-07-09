@@ -5,9 +5,26 @@
  *                 tips: 在调用上，使用[type.xxx](state,outerData){}来写实际的函数逻辑
  *                     函数逻辑写在实际的mutations中
  */
-export const ADD_TO_CART = 'ADD_TO_CART'
-export const CHECKOUT_REQUEST = 'CHECKOUT_REQUEST'
-export const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS'
-export const CHECKOUT_FAILURE = 'CHECKOUT_FAILURE'
-export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS'
 export const GET_SERVICE_LIST = 'GET_SERVICE_LIST'
+export const GET_INFO_LIST = 'GET_INFO_LIST'
+export const GET_ABOUT_LIST = 'GET_ABOUT_LIST'
+/**
+ * [description] get cart list
+ */
+export const GET_CART_LIST = 'GET_CART_LIST'
+/**
+ * [description] select shop checkbox
+ */
+export const ON_CHECK_SHOP = 'ON_CHECK_SHOP'
+/**
+ * [description] unselect shop checkbox
+ */
+export const UN_CHECK_SHOP = 'UN_CHECK_SHOP'
+/**
+ * [description] select one of checkbox
+ */
+export const ON_CHECK_ITEMS = 'ON_CHECK_ITEMS'
+/**
+ * [description] unselect one of checkbox
+ */
+export const UN_CHECK_ITEMS = 'UN_CHECK_ITEMS'

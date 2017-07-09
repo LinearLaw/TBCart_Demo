@@ -3,7 +3,7 @@
     "shop_id": 1,
     "shopName": "新生格度",
     "shopGoodsSel": "thisShop",
-    "S_Sel": false,
+    "checkitem": false,
     "shopGoods": [
       {
         "id": 1,
@@ -41,7 +41,7 @@
     "shop_id": 2,
     "shopName": "新生格度",
     "shopGoodsSel": "thisShop",
-    "S_Sel": false,
+    "checkitem": false,
     "shopGoods": [
       {
         "id": 1,
@@ -69,7 +69,7 @@
     "shop_id": 3,
     "shopName": "新生格度",
     "shopGoodsSel": "thisShop",
-    "S_Sel": false,
+    "checkitem": false,
     "shopGoods": [
       {
         "id": 1,
@@ -97,7 +97,7 @@
     "shop_id": 4,
     "shopName": "新生格度",
     "shopGoodsSel": "thisShop",
-    "S_Sel": false,
+    "checkitem": false,
     "shopGoods": [
       {
         "id": 1,

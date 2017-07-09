@@ -24,4 +24,9 @@ export const getAboutList = ({commit})=>{
     commit("GET_ABOUT_LIST",result.data);
   })
 }
+export const getCartList = ({commit})=>{
+  axios.get("/static/json/cart.json").then((result)=>{
+    commit("GET_CART_LIST",result.data);
+  })
+}
 
