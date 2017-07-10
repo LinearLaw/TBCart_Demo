@@ -38,14 +38,14 @@
                     <div>操作</div>
                 </div>
                 <div class="shopGoods">
-                    <div class="table_body clearfix" ng-repeat="item in list">
+                    <div class="table_body clearfix" ng-repeat="(item,index) in list">
                         <div class="shop_name">
-                            <input type="checkbox" ng-change="item.shopGoodsSel()" ng-model="item.S_Sel"/>
+                            <input type="checkbox" ng-change="item.shopGoodsSel()" ng-model="item.checkitem"/>
                             <span>店铺：</span>
                             <a>item.shopName</a>
                         </div>
                         <div class="goods_box">
-                        <div class="goods_content" ng-repeat="shopItem in item.shopGoods track by $index">
+                        <div class="goods_content" ng-repeat="(shopItem,innerInd) in item.shopGoods">
                             <div class="goods_sel"><input type="checkbox" ng-click="render()" ng-model="shopItem.checkitem"/></div>
                             <div class="goods_pic"><img src="shopItem.imgSrc" alt=""/></div>
                             <div class="goods_title"><a href="#">shopItem.goTitle</a></div>
@@ -100,6 +100,7 @@
 </template>
 
 <script>
+    import {mapState,mapMutations,mapActions} from "vuex"
     export default{
         data(){
             return{
@@ -107,6 +108,9 @@
                 totalPrice:0,
                 totalCount:0
             }
+        },
+        computed:{
+          ...mapState(["cart","total"])
         },
         mounted(){
           $(document).on("scroll",function(){
@@ -122,6 +126,16 @@
                   $(foot).addClass("normal");
               }
           })
+        },
+        methods:{
+          ...mapMutations(["ON_CHECK_SHOP","UN_CHECK_SHOP","ON_CHECK_ITEMS","UN_CHECK_ITEMS"]),
+          ...mapActions(["GET_CART_LIST"]),
+          checkItems(index,innerInd){
+
+          },
+          checkShops(index){
+
+          }
         }
     }
 </script>
