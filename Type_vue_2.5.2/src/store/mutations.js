@@ -61,3 +61,36 @@ export const [types["UN_CHECK_ITEMS"]] = (state,outerData) => {
     state.cart[outerData]["checkitem"] = false;
     state.total = CalculateCount(state.cart);
 }
+
+export const [types["ALL_CHECK"]] = (state,outerData) => {
+    let totalPrice = 0;
+    let totalCount = 0;
+    let tempcart = state.cart
+    tempcart.map((value,index)=>{
+      value["checkitem"] = true;
+      tempcart["shopGoods"].map((innerVal,innerInd)=>{
+        innerVal["checkitem"] = true
+        totalPrice = totalPrice + parseInt(innerVal["price"]);
+        totalCount ++;
+      })
+    })
+    state.cart = tempcart;
+    state.total = {
+      totalPrice:totalPrice,
+      totalCount:totalCount
+    }
+}
+export const [types["ALL_UNCHECK"]] = (state,outerData) => {
+    let tempcart = state.cart
+    tempcart.map((value,index)=>{
+      value["checkitem"] = false;
+      tempcart["shopGoods"].map((innerVal,innerInd)=>{
+        innerVal["checkitem"] = false
+      })
+    })
+    state.cart = tempcart;
+    state.total = {
+      totalPrice:0,
+      totalCount:0
+    }
+}

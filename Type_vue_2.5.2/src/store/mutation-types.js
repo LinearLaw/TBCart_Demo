@@ -28,3 +28,11 @@ export const ON_CHECK_ITEMS = 'ON_CHECK_ITEMS'
  * [description] unselect one of checkbox
  */
 export const UN_CHECK_ITEMS = 'UN_CHECK_ITEMS'
+/**
+ * [description] select all of checkbox
+ */
+export const ALL_ONCHECK = 'ALL_ONCHECK'
+/**
+ * [description] unselect all of checkbox
+ */
+export const ALL_UNCHECK = 'ALL_UNCHECK'
