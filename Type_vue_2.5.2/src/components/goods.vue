@@ -38,7 +38,7 @@
                     <div>操作</div>
                 </div>
                 <div class="shopGoods">
-                    <div class="table_body clearfix" v-for="(item,index) in list">
+                    <div class="table_body clearfix" v-for="(item,index) in cart">
                         <div class="shop_name">
                             <input type="checkbox" @click="checkShops($event,index)" v-model="item.checkitem"/>
                             <span>店铺：</span>
@@ -135,13 +135,25 @@
             "ALL_ONCHECK"   , "ALL_UNCHECK" ]),
           ...mapActions(["GET_CART_LIST"]),
           checkItems(event,index,innerInd){
-
+            if(this.cart[index]["shopGoods"][innerInd]["checkitem"]==true){
+              this.ON_CHECK_ITEMS({index:index,innerInd:innerInd})
+            }else{
+              this.UN_CHECK_ITEMS({index:index,innerInd:innerInd})
+            }
           },
           checkShops(event,index){
-
+            if(this.cart[index]["checkitem"]==false){
+              this.ON_CHECK_SHOP(index);
+            }else{
+              this.UN_CHECK_SHOP(index);
+            }
           },
           checkAll(){
-
+            if(this.allSelect==true){
+              this.ALL_ONCHECK();
+            }else{
+              this.ALL_UNCHECK();
+            }
           }
         }
     }
