@@ -13,7 +13,7 @@
                         <li class="fl"><a>库存紧张 0 </a></li>
                     </ul>
                 </div>
-                <div class="tab_right fr">
+                <div class="tab_right fr" v-if="total">
                     <span>已选商品（不含运费）</span>
                     <span class="allCount">{{total.totalCount}}</span>
                     <button>结算</button>
@@ -37,7 +37,7 @@
                     <div>金额</div>
                     <div>操作</div>
                 </div>
-                <div class="shopGoods">
+                <div class="shopGoods" v-if="cart">
                     <div class="table_body clearfix" v-for="(item,index) in cart">
                         <div class="shop_name">
                             <input type="checkbox" @click="checkShops($event,index)" v-model="item.checkitem"/>
@@ -87,7 +87,7 @@
                         <div><a>移入收藏夹</a></div>
                         <div><a>分享</a></div>
                     </div>
-                    <div class="footer_right fr">
+                    <div class="footer_right fr" v-if="total">
                         <div><span>已选商品<span>{{total.totalCount}}</span>件</span></div>
                         <div><span>合计（不含运费）:<span>{{total.totalPrice}}.00</span></span>
                         </div>
