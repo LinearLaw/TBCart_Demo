@@ -142,7 +142,7 @@
             }
           },
           checkShops(event,index){
-            if(this.cart[index]["checkitem"]==false){
+            if(this.cart[index]["checkitem"]==true){
               this.ON_CHECK_SHOP(index);
             }else{
               this.UN_CHECK_SHOP(index);
