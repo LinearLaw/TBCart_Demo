@@ -17,27 +17,27 @@ const CalculateCount = function(obj){
     totalCount
   }
 }
-export const [types["GET_SERVICE_LIST"]] = (state,outerData) => {
+export const GET_SERVICE_LIST = (state,outerData) => {
     state.service = outerData;
 }
-export const [types["GET_INFO_LIST"]] = (state,outerData) => {
+export const GET_INFO_LIST = (state,outerData) => {
     state.navinfo = outerData;
 }
-export const [types["GET_ABOUT_LIST"]] = (state,outerData) => {
+export const GET_ABOUT_LIST = (state,outerData) => {
     state.copys = outerData;
 }
-export const [types["GET_CART_LIST"]] = (state,outerData) => {
+export const GET_CART_LIST = (state,outerData) => {
     state.cart = outerData;
 }
 
-export const [types["ON_CHECK_SHOP"]] = (state,outerData) => {
+export const ON_CHECK_SHOP = (state,outerData) => {
     state.cart[outerData]["checkitem"] = true;
     state.cart[outerData].map((items)=>{
       items["checkitem"] = true;
     })
     state.total = CalculateCount(state.cart);
 }
-export const [types["UN_CHECK_SHOP"]] = (state,outerData) => {
+export const UN_CHECK_SHOP = (state,outerData) => {
     state.cart[outerData]["checkitem"] = false;
     state.cart[outerData].map((items)=>{
       items["checkitem"] = false;
@@ -45,7 +45,7 @@ export const [types["UN_CHECK_SHOP"]] = (state,outerData) => {
     state.total = CalculateCount(state.cart);
 
 }
-export const [types["ON_CHECK_ITEMS"]] = (state,outerData) => {
+export const ON_CHECK_ITEMS = (state,outerData) => {
     state.cart[outerData.index]["shopGoods"][outerData.innerInd]["checkitem"] = true;
     let signal = true;
     state.cart[outerData.index]["shopGoods"].map((items,index)=>{
@@ -56,13 +56,13 @@ export const [types["ON_CHECK_ITEMS"]] = (state,outerData) => {
     state.cart[outerData]["checkitem"] = signal;
     state.total = CalculateCount(state.cart);
 }
-export const [types["UN_CHECK_ITEMS"]] = (state,outerData) => {
+export const UN_CHECK_ITEMS = (state,outerData) => {
     state.cart[outerData.index]["shopGoods"][outerData.innerInd]["checkitem"] = false;
     state.cart[outerData]["checkitem"] = false;
     state.total = CalculateCount(state.cart);
 }
 
-export const [types["ALL_CHECK"]] = (state,outerData) => {
+export const ALL_CHECK = (state,outerData) => {
     let totalPrice = 0;
     let totalCount = 0;
     let tempcart = state.cart
@@ -80,7 +80,7 @@ export const [types["ALL_CHECK"]] = (state,outerData) => {
       totalCount:totalCount
     }
 }
-export const [types["ALL_UNCHECK"]] = (state,outerData) => {
+export const ALL_UNCHECK = (state,outerData) => {
     let tempcart = state.cart
     tempcart.map((value,index)=>{
       value["checkitem"] = false;
