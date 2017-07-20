@@ -1,19 +1,19 @@
 <template>
     <div>
         <!--3、tab栏-->
-        <section id="tab">
+        <section id="tab" v-if="total">
             <div class="container clearfix">
                 <div class="tab_left fl">
                     <ul>
                         <!--这里通过配置路由来实现三者的切换-->
                         <li class="fl">
-                            <a ui-sref="agoods" class="active">全部商品 {{totalCount}}</a>
+                            <a ui-sref="agoods" class="active">全部商品 {{total.totalCount}}</a>
                         </li>
                         <li class="fl"><a>降价商品 0 </a></li>
                         <li class="fl"><a>库存紧张 0 </a></li>
                     </ul>
                 </div>
-                <div class="tab_right fr" v-if="total">
+                <div class="tab_right fr">
                     <span>已选商品（不含运费）</span>
                     <span class="allCount">{{total.totalCount}}</span>
                     <button>结算</button>
@@ -44,30 +44,30 @@
                             <span>店铺：</span>
                             <a>{{item.shopName}}</a>
                         </div>
-                        <div class="goods_box">
-                        <div class="goods_content" v-for="(shopItem,innerInd) in item.shopGoods">
-                            <div class="goods_sel"><input type="checkbox" @click="checkItems($event,index,innerInd)" v-model="shopItem.checkitem"/></div>
-                            <div class="goods_pic"><img src="shopItem.imgSrc" alt=""/></div>
-                            <div class="goods_title"><a href="#">{{shopItem.goTitle}}</a></div>
-                            <div class="goods_type">
-                                <div>{{shopItem.goColor}}</div>
-                                <div>{{shopItem.goType}}</div>
-                            </div>
-                            <div class="goods_price">
-                                <span>￥{{shopItem.price}}.00</span>
-                            </div>
-                            <div class="goods_count">
-                                <button class="minus" ng-click="shopItem.minus()">-</button>
-                                <input type="text" ng-model="shopItem.count"/>
-                                <button class="plus" ng-click="shopItem.plus()">+</button>
-                            </div>
-                            <div class="goods_total">￥{{shopItem.count}}*{{shopItem.price}}.00</div>
-                            <div class="goods_oper">
-                                <div><a>移入收藏夹</a></div>
-                                <div><a ng-click="delThis(item,shopItem)">删除</a></div>
-                                <div class="resemGoods"><a>相似宝贝</a></div>
-                            </div>
-                        </div>
+                        <div class="goods_box" v-if="item.shopGoods">
+                          <div class="goods_content" v-for="(shopItem,innerInd) in item.shopGoods">
+                              <div class="goods_sel"><input type="checkbox" @click="checkItems($event,index,innerInd)" v-model="shopItem.checkitem"/></div>
+                              <div class="goods_pic"><img src="shopItem.imgSrc" alt=""/></div>
+                              <div class="goods_title"><a href="#">{{shopItem.goTitle}}</a></div>
+                              <div class="goods_type">
+                                  <div>{{shopItem.goColor}}</div>
+                                  <div>{{shopItem.goType}}</div>
+                              </div>
+                              <div class="goods_price">
+                                  <span>￥{{shopItem.price}}.00</span>
+                              </div>
+                              <div class="goods_count">
+                                  <button class="minus" ng-click="shopItem.minus()">-</button>
+                                  <input type="text" ng-model="shopItem.count"/>
+                                  <button class="plus" ng-click="shopItem.plus()">+</button>
+                              </div>
+                              <div class="goods_total">￥{{shopItem.count}}*{{shopItem.price}}.00</div>
+                              <div class="goods_oper">
+                                  <div><a>移入收藏夹</a></div>
+                                  <div><a ng-click="delThis(item,shopItem)">删除</a></div>
+                                  <div class="resemGoods"><a>相似宝贝</a></div>
+                              </div>
+                          </div>
                         </div>
                     </div>
 

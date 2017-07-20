@@ -82,7 +82,7 @@
         <footer id="footer">
             <div class="container">
                 <div class="foot_paterner">
-                    <ul  class="clearfix">
+                    <ul  class="clearfix" v-if="service">
                         <li v-for="server in service"><a href="server.url">{{server.content}}</a></li>
                     </ul>
                     <ul>
@@ -91,12 +91,12 @@
                 </div>
                 <div class="foot_copyright">
                     <div class="line_1">
-                        <ul class="clearfix">
+                        <ul class="clearfix" v-if="navinfo">
                             <li v-if="infos in navinfo"><a href="infos.url">{{infos.content}}</a></li>
                         </ul>
                     </div>
                     <div class="line_2">
-                        <ul class="clearfix">
+                        <ul class="clearfix" v-if="copys">
                             <li v-if="about in copys"><a href="about.url">{{about.content}}</a></li>
                         </ul>
                     </div>
