@@ -108,32 +108,35 @@
             }
         },
         created(){
-          this.GET_CART_LIST();
+          this.getCartList();
         },
         computed:{
           ...mapState(["cart","total"])
         },
         mounted(){
-          $(document).on("scroll",function(){
-              var body = document.querySelector("body");
-              var pages = document.querySelector("#allPages")
-              var foot = document.querySelector("#foot");
-              var posi = pages.offsetHeight - body.scrollTop;
-              if(posi < 1300){
-                  $(foot).removeClass("normal");
-                  $(foot).addClass("static");
-              }else{
-                  $(foot).removeClass("static");
-                  $(foot).addClass("normal");
-              }
-          })
+          // setTimeout(()=>{
+          //   $(document).on("scroll",function(){
+          //       var body = document.querySelector("body");
+          //       var pages = document.querySelector("#allPages")
+          //       var foot = document.querySelector("#foot");
+          //       var posi = pages.offsetHeight - body.scrollTop;
+          //       if(posi < 1300){
+          //           $(foot).removeClass("normal");
+          //           $(foot).addClass("static");
+          //       }else{
+          //           $(foot).removeClass("static");
+          //           $(foot).addClass("normal");
+          //       }
+          //   })
+          // },1000)
+
         },
         methods:{
           ...mapMutations([
             "ON_CHECK_SHOP" , "UN_CHECK_SHOP",
             "ON_CHECK_ITEMS", "UN_CHECK_ITEMS",
             "ALL_ONCHECK"   , "ALL_UNCHECK" ]),
-          ...mapActions(["GET_CART_LIST"]),
+          ...mapActions(["getCartList"]),
           checkItems(event,index,innerInd){
             if(this.cart[index]["shopGoods"][innerInd]["checkitem"]==true){
               this.ON_CHECK_ITEMS({index:index,innerInd:innerInd})
