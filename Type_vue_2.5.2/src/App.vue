@@ -127,17 +127,16 @@ export default {
       ...mapState(["service","navinfo","copys"])
   },
   mounted(){
-    // var swiper = new Swiper('.swiper-container', {
-    //         pagination: '.swiper-pagination',
-    //         paginationClickable: true,
-    //         spaceBetween: 30,
-    //         centeredSlides: true,
-    //         autoplay: 1500,
-    //         autoplayDisableOnInteraction: false,
-    //         observer:true,
-    //         observeParents:true
-    // });
-    
+    var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 1500,
+            autoplayDisableOnInteraction: false,
+            observer:true,
+            observeParents:true
+    });
   },
   methods:{
       ...mapActions(["getServiceList","getInfosList","getAboutList"])
