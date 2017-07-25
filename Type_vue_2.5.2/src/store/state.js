@@ -1,4 +1,4 @@
-export const state = {
+module.exports = {
     service:[],
     navinfo:[],
     copys:[],

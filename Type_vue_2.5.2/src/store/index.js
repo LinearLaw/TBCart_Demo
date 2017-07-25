@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 import * as actions from './actions'
 import * as mutations from './mutations'
 import * as getters from './getters'
-import * as state from './state'
+import state from './state'
 // import cart from './modules/cart'
 // import products from './modules/products'
 // import createLogger from '../../../src/plugins/logger'     //vuex的logger插件的配置，单独设置在一个文件里

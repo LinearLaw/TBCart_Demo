@@ -61,7 +61,7 @@
                                   <input type="text" ng-model="shopItem.count"/>
                                   <button class="plus" ng-click="shopItem.plus()">+</button>
                               </div>
-                              <div class="goods_total">￥{{shopItem.count}}*{{shopItem.price}}.00</div>
+                              <div class="goods_total">￥{{shopItem.count * parseInt(shopItem.price)}}.00</div>
                               <div class="goods_oper">
                                   <div><a>移入收藏夹</a></div>
                                   <div><a ng-click="delThis(item,shopItem)">删除</a></div>

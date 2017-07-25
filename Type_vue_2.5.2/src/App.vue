@@ -81,8 +81,8 @@
         <footer id="footer">
             <div class="container">
                 <div class="foot_paterner">
-                    <ul  class="clearfix" v-if="service">
-                        <li v-for="server in service"><a href="server.url">{{server.content}}</a></li>
+                    <ul  class="clearfix" v-if="services">
+                        <li v-for="server in services"><a href="server.url">{{server.content}}</a></li>
                     </ul>
                     <ul>
                         <li></li>
@@ -90,13 +90,13 @@
                 </div>
                 <div class="foot_copyright">
                     <div class="line_1">
-                        <ul class="clearfix" v-if="navinfo">
-                            <li v-for="infos in navinfo"><a href="infos.url">{{infos.content}}</a></li>
+                        <ul class="clearfix" v-if="navinfos">
+                            <li v-for="infos in navinfos"><a href="infos.url">{{infos.content}}</a></li>
                         </ul>
                     </div>
                     <div class="line_2">
-                        <ul class="clearfix" v-if="copys">
-                            <li v-for="about in copys"><a href="about.url">{{about.content}}</a></li>
+                        <ul class="clearfix" v-if="copy">
+                            <li v-for="about in copy"><a href="about.url">{{about.content}}</a></li>
                         </ul>
                     </div>
                     <div class="line_3 clearfix">
@@ -115,13 +115,13 @@ export default {
   name: 'app',
   data(){
       return{
-
+        services:[],
+        navinfos:[],
+        copy:[]
       }
   },
   created(){
-      this.getServiceList();
-      this.getInfosList();
-      this.getAboutList();
+
   },
   computed:{
       ...mapState(["service","navinfo","copys"])
@@ -129,7 +129,19 @@ export default {
   watch:{
     "service":{
         handler(val,oldVal){
-            console.log(val,oldVal);
+            this.$set(this.$data,"services",this.service);
+        },
+        deep:true
+    },
+    "navinfo":{
+        handler(val,oldVal){
+            this.$set(this.$data,"navinfos",this.navinfo);
+        },
+        deep:true
+    },
+    "copy":{
+        handler(val,oldVal){
+            this.$set(this.$data,"copy",this.copys);
         },
         deep:true
     }
@@ -145,6 +157,9 @@ export default {
             observer:true,
             observeParents:true
     });
+    this.getServiceList();
+    this.getInfosList();
+    this.getAboutList();
   },
   methods:{
       ...mapActions(["getServiceList","getInfosList","getAboutList"])
