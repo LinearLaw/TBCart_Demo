@@ -91,12 +91,12 @@
                 <div class="foot_copyright">
                     <div class="line_1">
                         <ul class="clearfix" v-if="navinfo">
-                            <li v-if="infos in navinfo"><a href="infos.url">{{infos.content}}</a></li>
+                            <li v-for="infos in navinfo"><a href="infos.url">{{infos.content}}</a></li>
                         </ul>
                     </div>
                     <div class="line_2">
                         <ul class="clearfix" v-if="copys">
-                            <li v-if="about in copys"><a href="about.url">{{about.content}}</a></li>
+                            <li v-for="about in copys"><a href="about.url">{{about.content}}</a></li>
                         </ul>
                     </div>
                     <div class="line_3 clearfix">
@@ -125,6 +125,14 @@ export default {
   },
   computed:{
       ...mapState(["service","navinfo","copys"])
+  },
+  watch:{
+    "service":{
+        handler(val,oldVal){
+            console.log(val,oldVal);
+        },
+        deep:true
+    }
   },
   mounted(){
     var swiper = new Swiper('.swiper-container', {
