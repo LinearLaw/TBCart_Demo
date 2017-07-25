@@ -108,12 +108,13 @@
             }
         },
         created(){
-          this.getCartList();
+          
         },
         computed:{
           ...mapState(["cart","total"])
         },
         mounted(){
+          this.getCartList();
           // setTimeout(()=>{
           //   $(document).on("scroll",function(){
           //       var body = document.querySelector("body");
