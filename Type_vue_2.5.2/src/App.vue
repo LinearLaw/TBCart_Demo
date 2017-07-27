@@ -121,31 +121,13 @@ export default {
       }
   },
   created(){
-
+    this.getServiceList();
+    this.getInfosList();
+    this.getAboutList();
   },
   computed:{
       ...mapState(["service","navinfo","copys"])
   },
-  // watch:{
-  //   "service":{
-  //       handler(val,oldVal){
-  //           this.$set(this.$data,"services",this.service);
-  //       },
-  //       deep:true
-  //   },
-  //   "navinfo":{
-  //       handler(val,oldVal){
-  //           this.$set(this.$data,"navinfos",this.navinfo);
-  //       },
-  //       deep:true
-  //   },
-  //   "copy":{
-  //       handler(val,oldVal){
-  //           this.$set(this.$data,"copy",this.copys);
-  //       },
-  //       deep:true
-  //   }
-  // },
   mounted(){
     var swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
@@ -157,9 +139,7 @@ export default {
             observer:true,
             observeParents:true
     });
-    this.getServiceList();
-    this.getInfosList();
-    this.getAboutList();
+
   },
   methods:{
       ...mapActions(["getServiceList","getInfosList","getAboutList"])

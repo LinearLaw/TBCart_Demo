@@ -108,36 +108,26 @@
             }
         },
         created(){
-          
+          this.getCartList();
         },
         computed:{
+          /**
+           * @description  映射state
+           */
           ...mapState(["cart","total"])
         },
-        mounted(){
-          this.getCartList();
-          // setTimeout(()=>{
-          //   $(document).on("scroll",function(){
-          //       var body = document.querySelector("body");
-          //       var pages = document.querySelector("#allPages")
-          //       var foot = document.querySelector("#foot");
-          //       var posi = pages.offsetHeight - body.scrollTop;
-          //       if(posi < 1300){
-          //           $(foot).removeClass("normal");
-          //           $(foot).addClass("static");
-          //       }else{
-          //           $(foot).removeClass("static");
-          //           $(foot).addClass("normal");
-          //       }
-          //   })
-          // },1000)
-
-        },
         methods:{
+          /**
+           * @description  映射mutations 和 actions
+           */
           ...mapMutations([
             "ON_CHECK_SHOP" , "UN_CHECK_SHOP",
             "ON_CHECK_ITEMS", "UN_CHECK_ITEMS",
             "ALL_ONCHECK"   , "ALL_UNCHECK" ]),
           ...mapActions(["getCartList"]),
+          /**
+           * [description] 选择单个商品
+           */
           checkItems(event,index,innerInd){
             if(this.cart[index]["shopGoods"][innerInd]["checkitem"]!=true){
               this.ON_CHECK_ITEMS({index:index,innerInd:innerInd})
@@ -145,6 +135,9 @@
               this.UN_CHECK_ITEMS({index:index,innerInd:innerInd})
             }
           },
+          /**
+           * [description] 选择整个店铺的所有商品
+           */
           checkShops(event,index){
             if(this.cart[index]["checkitem"]!=true){
               this.ON_CHECK_SHOP(index);
@@ -152,6 +145,9 @@
               this.UN_CHECK_SHOP(index);
             }
           },
+          /**
+           * [description] 选择购物车内所有商品
+           */
           checkAll(){
             if(this.allSelect!=true){
               this.ALL_ONCHECK();
