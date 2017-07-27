@@ -35,12 +35,8 @@ input,button{
     outline:0;
     cursor:pointer;
 }
-.clearfix::before,
-.clerafix::after{
-    content:"";
-    display:table;
-    clear:both;
-}
+.clearfix::before,.clearfix::after {content: " ";visibility: hidden;display: block;clear: both;height: 0;font-size: 0}
+.clearfix {clear: both;}
 .fl{float:left;}
 .fr{float:right;}
 .txl{text-align:left;}

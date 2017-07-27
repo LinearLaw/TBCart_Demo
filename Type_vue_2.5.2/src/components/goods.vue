@@ -358,8 +358,9 @@
 //5、结算
 #foot {
   display: block;
-  > .container {
+    .container {
     margin-top:20px;
+    height:auto;
     background-color: #E5E5E5;
     > .con_left {
       width: 88%;
