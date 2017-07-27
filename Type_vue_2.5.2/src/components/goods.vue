@@ -139,21 +139,21 @@
             "ALL_ONCHECK"   , "ALL_UNCHECK" ]),
           ...mapActions(["getCartList"]),
           checkItems(event,index,innerInd){
-            if(this.cart[index]["shopGoods"][innerInd]["checkitem"]==true){
+            if(this.cart[index]["shopGoods"][innerInd]["checkitem"]!=true){
               this.ON_CHECK_ITEMS({index:index,innerInd:innerInd})
             }else{
               this.UN_CHECK_ITEMS({index:index,innerInd:innerInd})
             }
           },
           checkShops(event,index){
-            if(this.cart[index]["checkitem"]==true){
+            if(this.cart[index]["checkitem"]!=true){
               this.ON_CHECK_SHOP(index);
             }else{
               this.UN_CHECK_SHOP(index);
             }
           },
           checkAll(){
-            if(this.allSelect==true){
+            if(this.allSelect!=true){
               this.ALL_ONCHECK();
             }else{
               this.ALL_UNCHECK();

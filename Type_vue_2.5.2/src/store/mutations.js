@@ -5,7 +5,7 @@ const CalculateCount = function(obj){
   let totalPrice = 0;
   let totalCount = 0;
   obj.map((value,index)=>{
-    obj["shopGoods"].map((innerVal,innerInd)=>{
+    value["shopGoods"].map((innerVal,innerInd)=>{
       if(innerVal["checkitem"] == true){
         totalPrice = totalPrice + parseInt(innerVal["price"]);
         totalCount ++;
@@ -32,14 +32,14 @@ export const GET_CART_LIST = (state,outerData) => {
 
 export const ON_CHECK_SHOP = (state,outerData) => {
     state.cart[outerData]["checkitem"] = true;
-    state.cart[outerData].map((items)=>{
+    state.cart[outerData]["shopGoods"].map((items)=>{
       items["checkitem"] = true;
     })
     state.total = CalculateCount(state.cart);
 }
 export const UN_CHECK_SHOP = (state,outerData) => {
     state.cart[outerData]["checkitem"] = false;
-    state.cart[outerData].map((items)=>{
+    state.cart[outerData]["shopGoods"].map((items)=>{
       items["checkitem"] = false;
     })
     state.total = CalculateCount(state.cart);
@@ -53,22 +53,22 @@ export const ON_CHECK_ITEMS = (state,outerData) => {
         signal = false;
       }
     })
-    state.cart[outerData]["checkitem"] = signal;
+    state.cart[outerData.index]["checkitem"] = signal;
     state.total = CalculateCount(state.cart);
 }
 export const UN_CHECK_ITEMS = (state,outerData) => {
     state.cart[outerData.index]["shopGoods"][outerData.innerInd]["checkitem"] = false;
-    state.cart[outerData]["checkitem"] = false;
+    state.cart[outerData.index]["checkitem"] = false;
     state.total = CalculateCount(state.cart);
 }
 
-export const ALL_CHECK = (state,outerData) => {
+export const ALL_ONCHECK = (state,outerData) => {
     let totalPrice = 0;
     let totalCount = 0;
     let tempcart = state.cart
     tempcart.map((value,index)=>{
       value["checkitem"] = true;
-      tempcart["shopGoods"].map((innerVal,innerInd)=>{
+      value["shopGoods"].map((innerVal,innerInd)=>{
         innerVal["checkitem"] = true
         totalPrice = totalPrice + parseInt(innerVal["price"]);
         totalCount ++;
@@ -84,7 +84,7 @@ export const ALL_UNCHECK = (state,outerData) => {
     let tempcart = state.cart
     tempcart.map((value,index)=>{
       value["checkitem"] = false;
-      tempcart["shopGoods"].map((innerVal,innerInd)=>{
+      value["shopGoods"].map((innerVal,innerInd)=>{
         innerVal["checkitem"] = false
       })
     })
