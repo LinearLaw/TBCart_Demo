@@ -57,9 +57,9 @@
                                   <span>￥{{shopItem.price}}.00</span>
                               </div>
                               <div class="goods_count">
-                                  <button class="minus" ng-click="shopItem.minus()">-</button>
-                                  <input type="text" ng-model="shopItem.count"/>
-                                  <button class="plus" ng-click="shopItem.plus()">+</button>
+                                  <button class="minus" @click="minusCount($event,index,innerInd)">-</button>
+                                  <input type="text" v-model="shopItem.count"/>
+                                  <button class="plus" @click="plusCount($event,index,innerInd)">+</button>
                               </div>
                               <div class="goods_total">￥{{shopItem.count * parseInt(shopItem.price)}}.00</div>
                               <div class="goods_oper">
@@ -123,7 +123,8 @@
           ...mapMutations([
             "ON_CHECK_SHOP" , "UN_CHECK_SHOP",
             "ON_CHECK_ITEMS", "UN_CHECK_ITEMS",
-            "ALL_ONCHECK"   , "ALL_UNCHECK" ]),
+            "ALL_ONCHECK"   , "ALL_UNCHECK" ,
+            "PLUS_COUNT"    , "MINUS_COUNT"]),
           ...mapActions(["getCartList"]),
           /**
            * [description] 选择单个商品
@@ -154,6 +155,12 @@
             }else{
               this.ALL_UNCHECK();
             }
+          },
+          plusCount(event,index,innerInd){
+            this.PLUS_COUNT({index:index,innerInd:innerInd})
+          },
+          minusCount(event,index,innerInd){
+            this.MINUS_COUNT({index:index,innerInd:innerInd})
           }
         }
     }
