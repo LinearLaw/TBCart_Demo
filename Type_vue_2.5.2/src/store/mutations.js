@@ -96,14 +96,10 @@ export const ALL_UNCHECK = (state,outerData) => {
 }
 
 export const PLUS_COUNT = (state,outerData) => {
-    if(state.cart[outerData.index]["shopGoods"][outerData.innerInd]["count"]<=0){
-      state.cart[outerData.index]["shopGoods"][outerData.innerInd]["count"] = 0;
-    }else{
-      state.cart[outerData.index]["shopGoods"][outerData.innerInd]["count"] ++;
-      if(state.cart[outerData.index]["shopGoods"][outerData.innerInd]["checkitem"] == true){
-        state.total.totalPrice = state.total.totalPrice + parseInt(state.cart[outerData.index]["shopGoods"][outerData.innerInd]["price"]);
-      }
-    }
+  state.cart[outerData.index]["shopGoods"][outerData.innerInd]["count"] ++;
+  if(state.cart[outerData.index]["shopGoods"][outerData.innerInd]["checkitem"] == true){
+    state.total.totalPrice = state.total.totalPrice + parseInt(state.cart[outerData.index]["shopGoods"][outerData.innerInd]["price"]);
+  }
 }
 export const MINUS_COUNT = (state,outerData) => {
     if(state.cart[outerData.index]["shopGoods"][outerData.innerInd]["count"]<=0){
@@ -115,6 +111,5 @@ export const MINUS_COUNT = (state,outerData) => {
       if(state.cart[outerData.index]["shopGoods"][outerData.innerInd]["checkitem"] == true){
         state.total.totalPrice = state.total.totalPrice - parseInt(state.cart[outerData.index]["shopGoods"][outerData.innerInd]["price"]);
       }
-      
     }
 }

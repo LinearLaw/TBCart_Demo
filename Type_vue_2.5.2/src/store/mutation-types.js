@@ -36,3 +36,11 @@ export const ALL_ONCHECK = 'ALL_ONCHECK'
  * [description] unselect all of checkbox
  */
 export const ALL_UNCHECK = 'ALL_UNCHECK'
+/**
+ * [description] plus one of goods count
+ */
+export const PLUS_COUNT = 'PLUS_COUNT'
+/**
+ * [description] minus one of goods count
+ */
+export const MINUS_COUNT = 'MINUS_COUNT'
