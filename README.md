@@ -51,3 +51,54 @@
             └─swiper
                 ├─css
                 └─js
+        
+    Type_vue_2.5.2
+        │
+        │  .babelrc
+        │  .gitignore
+        │  .postcssrc.js
+        │  index.html
+        │  package.json
+        │  README.md
+        │  
+        ├─build
+        ├─config
+        ├─src               
+        │  │  App.vue
+        │  │  main.js
+        │  │  
+        │  ├─assets
+        │  │  ├─css
+        │  │  │      common.css
+        │  │  ├─fonts
+        │  │  │      
+        │  │  └─img
+        │  │          
+        │  ├─components
+        │  │      goods.vue
+        │  │      
+        │  ├─router
+        │  │      index.js
+        │  │      
+        │  └─store
+        │          actions.js
+        │          getters.js
+        │          index.js
+        │          mutation-types.js
+        │          mutations.js
+        │          state.js
+        │          
+        ├─static
+        │  │  
+        │  ├─json
+        │  │      cart.json
+        │  │      copys.json
+        │  │      navinfo.json
+        │  │      service.json
+        │  │      
+        │  └─swiper
+        │      ├─css
+        │      │      
+        │      └─js
+        └─test
+                        
