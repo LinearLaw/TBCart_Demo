@@ -2,14 +2,25 @@
     淘宝网购物车Demo。
 
 ##  框架
-    angular版本为v1.6.3
+    angular 版本为v1.6.3
+    vue     版本为v2.5.2
 
-##  基本功能
+##  Angular 1.6.3
     1、使用angular进行了模块划分；
     2、ui-router路由嵌套实现页面加载；
     3、数据绑定单价和总价关联；
     4、顺便练习了一下css和html布局
     5、$http完成ajax，获取json中的内容
+
+##  vue 2.5.2
+
+    vue-cli脚手架搭建项目目录
+    vue + vue-router + vuex + axios + swiper
+        1、商品单选、商品店铺全选、商品全选
+        2、动态计算总价格
+        3、增减商品数量
+        4、底部广告轮播图
+
 ##  结构
 
     Type_angular_1.6.3
