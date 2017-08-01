@@ -57,30 +57,30 @@
         │  .babelrc
         │  .gitignore
         │  .postcssrc.js
-        │  index.html
+        │  index.html               主html页
         │  package.json
         │  README.md
         │  
         ├─build
-        ├─config
-        ├─src               
-        │  │  App.vue
-        │  │  main.js
+        ├─config                    
+        ├─src                       源代码
+        │  │  App.vue               app主入口组件
+        │  │  main.js               app主组件
         │  │  
-        │  ├─assets
-        │  │  ├─css
-        │  │  │      common.css
+        │  ├─assets                 静态资源文件
+        │  │  ├─css                 
+        │  │  │      
         │  │  ├─fonts
         │  │  │      
         │  │  └─img
         │  │          
-        │  ├─components
-        │  │      goods.vue
+        │  ├─components             子组件
+        │  │      goods.vue 
         │  │      
-        │  ├─router
+        │  ├─router                 路由配置
         │  │      index.js
         │  │      
-        │  └─store
+        │  └─store                  vuex配置
         │          actions.js
         │          getters.js
         │          index.js
@@ -88,7 +88,7 @@
         │          mutations.js
         │          state.js
         │          
-        ├─static
+        ├─static                    生产环境静态文件
         │  │  
         │  ├─json
         │  │      cart.json
