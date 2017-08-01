@@ -40,7 +40,7 @@
                 width: 105px;
                 height: 45px;
                 background-size:300px 225px;
-                background-image: url("./assets/img/logo.png");
+                background-image: url("../assets/img/logo.png");
                 background-position:  -150px -150px;
                 vertical-align: middle;
             }

@@ -107,7 +107,7 @@
                     height: 25px;
                     margin:0 5px;
                     background-size:880px 35px;
-                    background-image: url("./assets/img/copy.jpg");
+                    background-image: url("../assets/img/copy.jpg");
                     background-position:  -860px 0px;
                     vertical-align: middle;
                 }
