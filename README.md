@@ -21,6 +21,11 @@
         3、增减商品数量
         4、底部广告轮播图
 
+##  react 16.2.0
+
+    create-react-app脚手架搭建
+    更新中。
+
 ##  结构
 
     Type_angular_1.6.3
