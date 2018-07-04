@@ -1,0 +1,49 @@
+#logo > .container {
+  height: 98px;
+  padding: 20px 0;
+}
+#logo > .container > .head_left_logo > .tb_title {
+  position: absolute;
+  opacity: 0;
+}
+#logo > .container > .head_left_logo > .logo {
+  width: 105px;
+  height: 45px;
+  background-size: 300px 225px;
+  background-image: url("../img/logo.png");
+  background-position: -150px -150px;
+  vertical-align: middle;
+}
+#logo > .container > .head_left_logo > h1 {
+  margin-left: 12px;
+  font-size: 22px;
+  color: #3c3c3c;
+  line-height: 45px;
+}
+#logo > .container .head_right_search {
+  width: 510px;
+  border: 3px solid #ff4400;
+}
+#logo > .container .head_right_search select,
+#logo > .container .head_right_search button,
+#logo > .container .head_right_search input {
+  border: 0;
+  outline: 0;
+}
+#logo > .container .head_right_search > button {
+  width: 90px;
+  height: 30px;
+  float: right;
+  background-color: #ff4400;
+  font: 18px/30px "Microsoft YaHei";
+  color: #fff;
+}
+#logo > .container .head_right_search > button:hover {
+  background-color: #F52B00;
+}
+#logo > .container .head_right_search > select {
+  width: 75px;
+  height: 30px;
+  padding-left: 15px;
+  background-color: #f5f5f5;
+}

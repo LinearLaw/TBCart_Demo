@@ -1,0 +1,235 @@
+#tab > .container > .tab_left {
+  padding-top: 5px;
+  height: 100%;
+}
+#tab > .container > .tab_left > ul > li {
+  height: 35px;
+  font: bold 16px "microsoft yahei";
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+#tab > .container > .tab_left > ul > li > a {
+  padding-left: 20px;
+  padding-right: 30px;
+  border-left: 1px solid #f0f0f0;
+  color: #3c3c3c;
+}
+#tab > .container > .tab_left > ul > li > .active {
+  color: #ff4400;
+}
+#tab > .container > .tab_left > ul > li:first-child a {
+  border: 0;
+}
+#tab > .container > .tab_right {
+  font-size: 14px;
+  font-family: "宋体";
+}
+#tab > .container > .tab_right > .allCount {
+  color: #ff4400;
+  font-weight: bold;
+}
+#tab > .container > .tab_right > button {
+  width: 56px;
+  height: 26px;
+  border-radius: 4px;
+  background-color: #AAA;
+  color: #fff;
+}
+#tab > .container > .tab_right > button:hover {
+  background-color: #ff4400;
+}
+#tab > .container > .baseLine {
+  width: 100%;
+  height: 2px;
+  background-color: #f0f0f0;
+}
+#tab > .container > .baseLine > .line {
+  width: 128px;
+  height: 100%;
+  background-color: #ff4400;
+}
+#goods_content > .container > .table_head {
+  padding: 15px 0;
+  padding-left: 10px;
+}
+#goods_content > .container > .table_head > div {
+  float: left;
+  font-size: 14px;
+}
+#goods_content > .container > .table_head > div:first-child {
+  width: 150px;
+}
+#goods_content > .container > .table_head > div:nth-child(2) {
+  width: 390px;
+}
+#goods_content > .container > .table_head > div:nth-child(3) {
+  width: 135px;
+}
+#goods_content > .container > .table_head > div:nth-child(4) {
+  width: 135px;
+}
+#goods_content > .container > .table_head > div:nth-child(5) {
+  width: 100px;
+}
+#goods_content > .container > .table_head > div:nth-child(6) {
+  width: 65px;
+}
+#goods_content > .container > .shopGoods {
+  font-size: 14px;
+}
+#goods_content > .container > .shopGoods > .table_body {
+  margin-top: 10px;
+}
+#goods_content > .container > .shopGoods > .table_body > .shop_name {
+  width: 100%;
+  height: 35px;
+  padding-left: 10px;
+}
+#goods_content > .container > .shopGoods > .table_body > .shop_name > a,
+#goods_content > .container > .shopGoods > .table_body > .shop_name span {
+  font: 12px "宋体";
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box {
+  border: 1px solid #e8e8e8;
+  width: 100%;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content {
+  height: 120px;
+  padding: 15px 20px;
+  background-color: #fcfcfc;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content + .goods_content {
+  border-top: 1px solid #e8e8e8;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div {
+  height: 100%;
+  float: left;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_sel {
+  width: 25px;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_pic {
+  width: 90px;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_title {
+  width: 220px;
+  padding-right: 40px;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_title > a {
+  font-size: 12px;
+  color: #3c3c3c;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_title > a:hover {
+  color: #ff4400;
+  border-bottom: 1px solid #ff4400;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_type {
+  width: 170px;
+  font-size: 12px;
+  color: #9c9c9c;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_type > div {
+  display: block;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_price {
+  width: 135px;
+  font: bold 14px/40px "宋体";
+  color: #3c3c3c;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_price > span {
+  font-family: Verdana,Tahoma,arial;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_count {
+  width: 135px;
+  padding-top: 10px;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_count button {
+  width: 20px;
+  height: 25px;
+  background-color: #F0F0F0;
+  cursor: pointer;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_count button:hover {
+  border: 1px solid #ff4400;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_count > input {
+  width: 42px;
+  height: 27px;
+  text-align: center;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_total {
+  width: 100px;
+  font: bold 16px/40px Verdana, Tahoma, arial;
+  color: #ff4400;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_oper {
+  width: 65px;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_oper > div > a {
+  font: 12px "宋体";
+  cursor: pointer;
+}
+#goods_content > .container > .shopGoods > .table_body > .goods_box > .goods_content > div.goods_oper > div > a:hover {
+  color: #ff4400;
+  border-bottom: 1px solid #ff4400;
+}
+#foot {
+  display: block;
+}
+#foot .container {
+  margin-top: 20px;
+  height: auto;
+  background-color: #E5E5E5;
+}
+#foot .container > .con_left {
+  width: 88%;
+  padding: 10px 5px;
+  line-height: 40px;
+}
+#foot .container > .con_left > .foot_left > input,
+#foot .container > .con_left > .foot_left div,
+#foot .container > .con_left > .foot_left label {
+  float: left;
+}
+#foot .container > .con_left > .foot_left > input {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+#foot .container > .con_left > .foot_left > div,
+#foot .container > .con_left > .foot_left label {
+  margin-right: 30px;
+}
+#foot .container > .con_left > .foot_left > div > a,
+#foot .container > .con_left > .foot_left label > a {
+  font: 12px "宋体";
+  cursor: pointer;
+}
+#foot .container > .con_left > .foot_left > div > a:hover,
+#foot .container > .con_left > .foot_left label > a:hover {
+  color: #ff4400;
+  border-bottom: 1px solid #ff4400;
+}
+#foot .container > .con_left > .footer_right > div {
+  float: left;
+  margin-left: 20px;
+  padding-top: 8px;
+  font: 12px "宋体";
+}
+#foot .container > .con_left > .footer_right > div > span > span {
+  margin: 0 5px;
+  font: bold 20px tohoma,arial;
+  color: #ff4400;
+}
+#foot .container > button {
+  width: 12%;
+  height: 60px;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-size: 20px;
+  float: right;
+  background-color: #aaa;
+}
+#foot .container > button:hover {
+  background-color: #ff4400;
+}

@@ -1,0 +1,42 @@
+#ads {
+  margin-top: 15px;
+}
+#ads > .container {
+  background-color: #fff;
+}
+#ads > .container > .hot_ads_title {
+  width: 100%;
+  height: 100%;
+}
+#ads > .container > .hot_ads_title > ul {
+  height: 100%;
+}
+#ads > .container > .hot_ads_title > ul > li {
+  width: 80px;
+  height: 35px;
+  float: left;
+  text-align: center;
+}
+#ads > .container > .hot_ads_title > ul > li > a {
+  color: #3c3c3c;
+  font: bold 14px/35px "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", SimSun;
+}
+#ads > .container > .hot_ads_title > ul > li + li {
+  width: 100px;
+}
+#ads > .container > .hot_ads_title > ul > li + li > a {
+  padding-left: 15px;
+  border-left: 1px solid #f0f0f0;
+}
+#ads > .container > .line {
+  width: 100%;
+  height: 2px;
+  background-color: #f0f0f0;
+  float: left;
+  display: block;
+  margin-bottom: 25px;
+}
+#ads > .container > .hot_ads_content {
+  width: 100%;
+  height: 100%;
+}

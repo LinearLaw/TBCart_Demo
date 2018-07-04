@@ -41,12 +41,12 @@
     computed:{
         ...mapState(["service","navinfo","copys"])
     },
-
     methods:{
         ...mapActions(["getServiceList","getInfosList","getAboutList"])
     }
   }
 </script>
+
 <style lang="less" scoped>
 #footer{
     padding-bottom: 30px;
