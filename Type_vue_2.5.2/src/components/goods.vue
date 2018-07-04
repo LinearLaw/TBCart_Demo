@@ -47,7 +47,7 @@
                         <div class="goods_box" v-if="item.shopGoods">
                           <div class="goods_content" v-for="(shopItem,innerInd) in item.shopGoods">
                               <div class="goods_sel"><input type="checkbox" @click="checkItems($event,index,innerInd)" v-model="shopItem.checkitem"/></div>
-                              <div class="goods_pic"><img :src="shopItem.imgSrc" alt=""/></div>
+                              <div class="goods_pic"><img src="../assets/img/tb20.jpg" alt=""/></div>
                               <div class="goods_title"><a href="#">{{shopItem.goTitle}}</a></div>
                               <div class="goods_type">
                                   <div>{{shopItem.goColor}}</div>
@@ -76,7 +76,7 @@
         </section>
 
         <!--5、结算-->
-        <footer id="foot" class="normal">
+        <footer id="foot" class="static">
             <div class="container clearfix">
                 <div class="con_left fl">
                     <div class="foot_left fl">

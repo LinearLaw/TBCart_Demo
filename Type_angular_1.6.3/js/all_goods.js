@@ -152,18 +152,18 @@ angular.module("AGoods", [])
         /**
          * @desc 页面滑动的时候，把结算栏固定到底部或释放
          */
-        $document.on("scroll",function(){
-            var body = document.querySelector("body");
-            var pages = document.querySelector("#allPages")
-            var $ = angular.element;
-            var foot = document.querySelector("#foot");
-            var posi = pages.offsetHeight - body.scrollTop;
-            if(posi < 1300){
-                $(foot).removeClass("normal");
-                $(foot).addClass("static");
-            }else{
-                $(foot).removeClass("static");
-                $(foot).addClass("normal");
-            }
-        })
+        // $document.on("scroll",function(){
+        //     var body = document.querySelector("body");
+        //     var pages = document.querySelector("#allPages")
+        //     var $ = angular.element;
+        //     var foot = document.querySelector("#foot");
+        //     var posi = pages.offsetHeight - body.scrollTop;
+        //     if(posi < 1300){
+        //         $(foot).removeClass("normal");
+        //         $(foot).addClass("static");
+        //     }else{
+        //         $(foot).removeClass("static");
+        //         $(foot).addClass("normal");
+        //     }
+        // })
     }])
