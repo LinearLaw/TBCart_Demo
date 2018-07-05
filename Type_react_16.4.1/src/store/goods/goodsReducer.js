@@ -5,7 +5,8 @@ let defaultState = {
     total: {
         totalPrice: 0,
         totalCount: 0
-    }
+    },
+    allCheck:false
 }
 const CalculateCount = function (obj) {
     let totalPrice = 0;
