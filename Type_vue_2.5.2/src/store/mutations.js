@@ -43,7 +43,6 @@ export const UN_CHECK_SHOP = (state,outerData) => {
       items["checkitem"] = false;
     })
     state.total = CalculateCount(state.cart);
-
 }
 export const ON_CHECK_ITEMS = (state,outerData) => {
     state.cart[outerData.index]["shopGoods"][outerData.innerInd]["checkitem"] = true;

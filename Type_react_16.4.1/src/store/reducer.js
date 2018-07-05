@@ -1,7 +1,6 @@
 
 import * as acType from "./action-type.js";
 let defaultState = {
-    goodsList:[],
     serviceList:[],
     navInfoList:[],
     copyList:[]
@@ -9,11 +8,6 @@ let defaultState = {
 
 export const list = (state = defaultState,action)=>{
     switch(action.type){
-        case acType.GET_GOODS_LIST:
-            return {
-                ...state,
-                goodsList:action.data.data
-            };
         case acType.GET_SERVICE_LIST:
             return {
                 ...state,

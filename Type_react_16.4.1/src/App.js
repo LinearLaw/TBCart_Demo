@@ -15,8 +15,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navs />
-        <Logo />
+        {/* <Navs /> */}
+        {/* <Logo /> */}
         <Goods />
         <Ads />
         <Footers />

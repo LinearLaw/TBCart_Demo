@@ -1,23 +1,7 @@
 import * as acType  from "./action-type.js";
 import axios from "axios";
 
-//获取商品列表
-export const getGoodsList = (data)=>{
-    return function(dispatch){
-        try{
-            axios.get("/static/json/cart.json").then((res)=>{
-                let _res = res;
-                if(typeof res == "string"){
-                    _res = JSON.parse(res);
-                }
-                dispatch({
-                    type:acType.GET_GOODS_LIST,
-                    data:_res
-                })
-            })
-        }catch(err){throw err;}
-    }
-}
+
 
 //获取服务列表数据
 export const getServiceList = (data)=>{
