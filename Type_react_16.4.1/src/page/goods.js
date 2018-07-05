@@ -27,7 +27,7 @@ class Goods extends Component{
                                 return (
                                     <div className="table_body clearfix" key={index}>
                                         <div className="shop_name">
-                                            <input type="checkbox" onChange={this.checkShops.bind(this,index)} checked={item["checkitem"]} ref={"i_"+index}/>
+                                            <input type="checkbox" onChange={this.checkShops.bind(this,index)} value={item["checkitem"]} ref={"i_"+index}/>
                                             <span>店铺：</span>
                                             <a>{item.shopName}</a>
                                         </div>
@@ -95,6 +95,12 @@ class Goods extends Component{
     checkShops(index,_this){
         let str = "i_"+index;
         let val = this.refs[str].checked;
+        let _item = this.props.goods.goodsList[index];
+        let that = this;
+        _item["shopGoods"].map((items,_index)=>{
+            let _str = str + _index;
+            that.refs[_str].checked = val;
+        })
         this.props.actions.checkShop({
             index,
             val
