@@ -1,14 +1,26 @@
 import React ,{Component} from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+ 
 import "../assets/css/footers.css";
+
+import { getServiceList , getInfoList , getCopyList } from "../store/action.js"
 
 class Footers extends Component {
     render (){
+        let serviceList = this.props.list.serviceList;
+        let navInfoList = this.props.list.navInfoList;
+        let copyList = this.props.list.copyList;
         return (
             <footer id="footer">
                 <div className="container">
                     <div className="foot_paterner">
                         <ul  className="clearfix" v-if="service">
-                            <li v-for="server in service"><a href="server.url">server.content</a></li>
+                            {
+                                serviceList.map((item,index)=>{
+                                    return (<li key={index}><a href={item.url}>{item.content}</a></li>)
+                                })
+                            }
                         </ul>
                         <ul>
                             <li></li>
@@ -17,12 +29,23 @@ class Footers extends Component {
                     <div className="foot_copyright">
                         <div className="line_1">
                             <ul className="clearfix" v-if="navinfo">
-                                <li v-for="infos in navinfo"><a href="infos.url">infos.content</a></li>
+                            {
+                                navInfoList.map((item,index)=>{
+                                    return (<li key={index}><a href={item.url}>{item.content}</a></li>)
+                                })
+                            }
                             </ul>
                         </div>
                         <div className="line_2">
                             <ul className="clearfix" v-if="copys">
-                                <li v-for="about in copys"><a href="about.url">about.content</a></li>
+                            {
+                                copyList.map((item,index)=>{
+                                    return (
+                                        <li key={index}><a href={item.url}>{item.content}</a></li>
+                                    )
+                                })
+                            }
+                                
                             </ul>
                         </div>
                         <div className="line_3 clearfix">
@@ -34,5 +57,31 @@ class Footers extends Component {
             </footer>
         )
     }
+    constructor(props){
+        super(props);
+    }
+    componentDidMount(){
+        this.props.actions.getServiceList();
+        this.props.actions.getInfoList();
+        this.props.actions.getCopyList();
+    }
 }
-export default Footers;
+
+//mapState的时候，map的应该是reducer下的方法，具体的变量挂在了这个reducer下面
+function mapState(state){
+    return {
+        list:state.list,
+    }
+}
+function mapActions(dispatch){
+    return {
+        actions:bindActionCreators({
+            getServiceList:getServiceList,
+            getCopyList:getCopyList,
+            getInfoList:getInfoList
+        },dispatch)
+    }
+}
+
+export default connect(mapState,mapActions)(Footers);
+

@@ -6,7 +6,7 @@ class Navs extends Component{
         return (
             <div id="nav">
                 <div id="TB_nav">
-                    <div className="container">
+                    <div className="container clearfix">
                         <ul className="left_Nav fl">
                             <li className="otherColor"><a>username</a></li>
                             <li><a>消息</a></li>
