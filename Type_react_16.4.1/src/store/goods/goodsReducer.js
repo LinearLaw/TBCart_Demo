@@ -26,7 +26,7 @@ const CalculateCount = function (obj) {
 }
 //获取商品列表
 export const goods = (state = defaultState, action) => {
-    const { goodsList,total } = state;
+    const { goodsList,total,allCheck } = state;
     switch (action.type) {
         case acType.GET_GOODS_LIST:
             return {
@@ -99,10 +99,11 @@ export const goods = (state = defaultState, action) => {
         case acType.CHECK_ALL_ITEMS:/* 选中所有 */
             let totalPrice = 0;
             let totalCount = 0;
+
             goodsList.map((value,index)=>{
-                value["checkitem"] = true;
+                value["checkitem"] = !allCheck;
                 value["shopGoods"].map((innerVal,innerInd)=>{
-                    innerVal["checkitem"] = true;
+                    innerVal["checkitem"] = !allCheck;
                     totalPrice = totalPrice + parseInt(innerVal["price"]) * parseInt(innerVal["count"]);
                     totalCount ++;
                 });
@@ -112,7 +113,8 @@ export const goods = (state = defaultState, action) => {
                 total:{
                     totalPrice:totalPrice,
                     totalCount:totalCount
-                }
+                },
+                allCheck:!allCheck
             }
             
         case acType.UN_CHECK_ALL_ITEMS:/* 取消选中所有 */

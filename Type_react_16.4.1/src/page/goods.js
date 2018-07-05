@@ -12,7 +12,7 @@ class Goods extends Component{
                 <div className="container">
                     <div className="table_head clearfix">
                         <div>
-                            <input type="checkbox" onClick={this.checkAll.bind(this)} />
+                            <input type="checkbox" onClick={this.checkAll.bind(this)} checked={!!this.props.goods.allCheck}/>
                             <span>全选</span>
                         </div>
                         <div>商品信息</div>
@@ -37,8 +37,6 @@ class Goods extends Component{
                                                 return (
                                                     <div className="goods_content" key={innerInd}>
                                                         <div className="goods_sel">
-
-                                                            
                                                             <input type="checkbox" onChange={this.checkItems.bind(this,index,innerInd)} defaultValue={shopItem.checkitem} ref={"i_"+index+innerInd}/>
                                                         </div>
                                                         <div className="goods_pic"><img src={require('../assets/img/tb20.jpg')} alt=""/></div>
@@ -92,7 +90,7 @@ class Goods extends Component{
     }
     checkAll(_this){
         console.log(_this);
-        // this.props.actions.checkAllItems();
+        this.props.actions.checkAllItems();
     }
     checkShops(index,_this){
         let str = "i_"+index;
