@@ -16,8 +16,10 @@ const CalculateCount = function (obj) {
             if (innerVal["checkitem"] == true) {
                 totalPrice = totalPrice + parseInt(innerVal["price"]) * parseInt(innerVal["count"]);
                 totalCount ++;
+                return;
             }
         })
+        return;
     })
     return {totalPrice,totalCount}
     

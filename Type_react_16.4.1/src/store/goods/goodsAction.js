@@ -8,7 +8,7 @@ export const getGoodsList = (data)=>{
         try{
             axios.get("/static/json/cart.json").then((res)=>{
                 let _res = res;
-                if(typeof res == "string"){
+                if(typeof res === "string"){
                     _res = JSON.parse(res);
                 }
                 dispatch({

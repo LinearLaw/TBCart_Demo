@@ -11,10 +11,10 @@ class Ads extends Component {
                 <div className="container">
                     <div className="hot_ads_title">
                         <ul>
-                            <li><a href="#">掌柜热卖</a></li>
-                            <li><a href="#">最近收藏的</a></li>
-                            <li><a href="#">最近浏览的</a></li>
-                            <li><a href="#">猜你喜欢的</a></li>
+                            <li><a href="javascript:void(0);">掌柜热卖</a></li>
+                            <li><a href="javascript:void(0);">最近收藏的</a></li>
+                            <li><a href="javascript:void(0);">最近浏览的</a></li>
+                            <li><a href="javascript:void(0);">猜你喜欢的</a></li>
                         </ul>
                     </div>
                     <div className="line"></div>

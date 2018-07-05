@@ -27,7 +27,7 @@ class Goods extends Component{
                                 return (
                                     <div className="table_body clearfix" key={index}>
                                         <div className="shop_name">
-                                            <input type="checkbox" onChange={this.checkShops.bind(this,index)} value={item["checkitem"]} ref={"i_"+index}/>
+                                            <input type="checkbox" onChange={this.checkShops.bind(this,index)} checked={!!item["checkitem"]} ref={"i_"+index }/>
                                             <span>店铺：</span>
                                             <a>{item.shopName}</a>
                                         </div>
@@ -37,6 +37,8 @@ class Goods extends Component{
                                                 return (
                                                     <div className="goods_content" key={innerInd}>
                                                         <div className="goods_sel">
+
+                                                            
                                                             <input type="checkbox" onChange={this.checkItems.bind(this,index,innerInd)} defaultValue={shopItem.checkitem} ref={"i_"+index+innerInd}/>
                                                         </div>
                                                         <div className="goods_pic"><img src={require('../assets/img/tb20.jpg')} alt=""/></div>
@@ -73,7 +75,7 @@ class Goods extends Component{
             </section>
         )
     }
-    componentDidMount(){
+    componentWillMount(){
         this.props.actions.getGoodsList();
     }
     plusCount(index,innerInd,_this){

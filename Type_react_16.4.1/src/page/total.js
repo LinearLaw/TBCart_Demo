@@ -10,7 +10,7 @@ class Totals extends Component{
                     <div className="container clearfix">
                         <div className="con_left fl">
                             <div className="foot_left fl">
-                                <input type="checkbox" onClick={this.checkAll.bind(this)} checked={this.props.goods.allCheck}/>
+                                <input type="checkbox" onClick={this.checkAll.bind(this)} checked={!!this.props.goods.allCheck}/>
                                 <label className="fl"><a>全选</a></label>
                                 <div><a>删除</a></div>
                                 <div><a>清除失效宝贝</a></div>

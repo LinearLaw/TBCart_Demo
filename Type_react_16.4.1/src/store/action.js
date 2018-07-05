@@ -9,7 +9,7 @@ export const getServiceList = (data)=>{
         try{
             axios.get("/static/json/service.json").then((res)=>{
                 let _res = res;
-                if(typeof res == "string"){
+                if(typeof res === "string"){
                     _res = JSON.parse(res);
                 }
                 dispatch({
@@ -29,7 +29,7 @@ export const getInfoList = (data)=>{
         try{
             axios.get("/static/json/navinfo.json").then((res)=>{
                 let _res = res;
-                if(typeof res == "string"){
+                if(typeof res === "string"){
                     _res = JSON.parse(res);
                 }
                 dispatch({
@@ -47,7 +47,7 @@ export const getCopyList = (data)=>{
         try{
             axios.get("/static/json/copys.json").then((res)=>{
                 let _res = res;
-                if(typeof res == "string"){
+                if(typeof res === "string"){
                     _res = JSON.parse(res);
                 }
                 dispatch({
