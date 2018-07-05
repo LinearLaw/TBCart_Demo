@@ -86,9 +86,12 @@ export const goods = (state = defaultState, action) => {
             goodsList[action.data.index]["shopGoods"].map((items)=>{
                 items["checkitem"] = action.data.val;
             })
+            let calObj = CalculateCount(goodsList);
+            total.totalPrice = calObj.totalPrice;
+            total.totalCount = calObj.totalCount;
             return {
                 goodsList,
-                total:Object.assign({},...CalculateCount(goodsList))
+                total
             }
         case acType.CHECK_ALL_ITEMS:/* 选中所有 */
             let totalPrice = 0;
