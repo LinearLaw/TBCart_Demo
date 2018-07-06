@@ -4,11 +4,14 @@ import "../assets/css/logo.css";
 
 class Logo extends Component{
     render (){
+        let logoStyle = {
+            backgroundImage:"url("+require("../assets/img/logo.png")+")"
+        }
         return (
             <section id="logo">
                 <div className="container">
                     <div className="head_left_logo fl">
-                        <div className="logo fl"></div>
+                        <div className="logo fl" style={logoStyle}></div>
                         <div className="tb_title">淘宝网</div>
                         <h1 className="fl">购物车</h1>
                     </div>
