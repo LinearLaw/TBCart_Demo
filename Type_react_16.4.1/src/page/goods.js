@@ -37,7 +37,7 @@ class Goods extends Component{
                                                 return (
                                                     <div className="goods_content" key={innerInd}>
                                                         <div className="goods_sel">
-                                                            <input type="checkbox" onChange={this.checkItems.bind(this,index,innerInd)} defaultValue={shopItem.checkitem} ref={"i_"+index+innerInd}/>
+                                                            <input type="checkbox" onChange={this.checkItems.bind(this,index,innerInd)} checked={!!shopItem.checkitem} ref={"i_"+index+innerInd}/>
                                                         </div>
                                                         <div className="goods_pic"><img src={require('../assets/img/tb20.jpg')} alt=""/></div>
                                                         <div className="goods_title"><a href="#">{shopItem.goTitle}</a></div>
@@ -97,10 +97,10 @@ class Goods extends Component{
         let val = this.refs[str].checked;
         let _item = this.props.goods.goodsList[index];
         let that = this;
-        _item["shopGoods"].map((items,_index)=>{
-            let _str = str + _index;
-            that.refs[_str].checked = val;
-        })
+        // _item["shopGoods"].map((items,_index)=>{
+        //     let _str = str + _index;
+        //     that.refs[_str].checked = val;
+        // })
         this.props.actions.checkShop({
             index,
             val
@@ -109,18 +109,10 @@ class Goods extends Component{
     checkItems(index,innerInd,_this){
         let str = "i_"+index+innerInd;
         let val = this.refs[str].checked;
-        let _item = this.props.goods.goodsList[index];
         if(val == true){
-            let signal = true;
-            _item["shopGoods"].map((items,index)=>{
-                if(items["checkitem"] == false){
-                    signal = false;
-                }
-            })
             this.props.actions.checkItems({
                 index,
-                innerInd,
-                signal
+                innerInd
             })
         }else{
             this.props.actions.unCheckItems({

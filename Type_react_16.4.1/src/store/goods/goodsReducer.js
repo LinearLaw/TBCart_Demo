@@ -22,8 +22,17 @@ const CalculateCount = function (obj) {
         return;
     })
     return {totalPrice,totalCount}
-    
 }
+const judgeAllSelect = function(obj){
+    let signal = true;
+    obj.map((_innerItem,index)=>{
+        if(_innerItem["checkitem"] == false){
+            signal = false;
+        }
+    });
+    return signal;
+}
+
 //获取商品列表
 export const goods = (state = defaultState, action) => {
     const { goodsList,total,allCheck } = state;
@@ -67,12 +76,19 @@ export const goods = (state = defaultState, action) => {
             };
         case acType.CHECK_ITEMS:/* 选中某一个item */
             goodsList[action.data.index]["shopGoods"][action.data.innerInd]["checkitem"] = true;
-            goodsList[action.data.index]["checkitem"] = action.data.signal;
+
+            let _item = goodsList[action.data.index];
+            let signal = judgeAllSelect(_item["shopGoods"]);
+            goodsList[action.data.index]["checkitem"] = signal;
+
+            let allSel = judgeAllSelect(goodsList);
+            
             total.totalPrice = CalculateCount(goodsList).totalPrice;
             total.totalCount++;
             return {
                 goodsList,
-                total
+                total,
+                allCheck:allSel
             }
         case acType.UN_CHECK_ITEMS: /* 取消选中某一个item */
             goodsList[action.data.index]["shopGoods"][action.data.innerInd]["checkitem"] = false;
@@ -82,7 +98,8 @@ export const goods = (state = defaultState, action) => {
             if(total.totalCount<=0){total.totalCount=0;}
             return {
                 goodsList,
-                total
+                total,
+                allCheck:false
             }
         case acType.CHECK_SHOP:/* 选中店铺 */
             goodsList[action.data.index]["checkitem"] = action.data.val;
@@ -90,11 +107,14 @@ export const goods = (state = defaultState, action) => {
                 items["checkitem"] = action.data.val;
             })
             let calObj = CalculateCount(goodsList);
+            let allSel_s = judgeAllSelect(goodsList);
+
             total.totalPrice = calObj.totalPrice;
             total.totalCount = calObj.totalCount;
             return {
                 goodsList,
-                total
+                total,
+                allCheck:allSel_s
             }
         case acType.CHECK_ALL_ITEMS:/* 选中所有 */
             let totalPrice = 0;
@@ -116,9 +136,6 @@ export const goods = (state = defaultState, action) => {
                 },
                 allCheck:!allCheck
             }
-            
-        case acType.UN_CHECK_ALL_ITEMS:/* 取消选中所有 */
-
         default:
             return state;
     }
