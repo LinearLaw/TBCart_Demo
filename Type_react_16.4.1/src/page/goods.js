@@ -89,7 +89,6 @@ class Goods extends Component{
         })
     }
     checkAll(_this){
-        console.log(_this);
         this.props.actions.checkAllItems();
     }
     checkShops(index,_this){
