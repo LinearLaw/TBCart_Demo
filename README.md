@@ -4,6 +4,7 @@
 ##  框架
     angular 版本为v1.6.3
     vue     版本为v2.5.2
+    react   版本为v16.2.0
 
 ##  Angular 1.6.3
     1、使用angular进行了模块划分；
@@ -25,7 +26,7 @@
 
     create-react-app脚手架搭建
     更新中。
-    
+
 
 ##  结构
 
@@ -57,7 +58,7 @@
             └─swiper
                 ├─css
                 └─js
-        
+
     Type_vue_2.5.2
         │
         │  .babelrc
@@ -81,7 +82,7 @@
         │  │  └─img
         │  │          
         │  ├─components             子组件
-        │  │      goods.vue 
+        │  │      goods.vue
         │  │      
         │  ├─router                 路由配置
         │  │      index.js
@@ -107,4 +108,3 @@
         │      │      
         │      └─js
         └─test
-                        
